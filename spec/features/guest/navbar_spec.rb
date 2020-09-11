@@ -9,6 +9,6 @@ RSpec.describe 'guest navbar' do
     expect(page).to have_button("Register")
     expect(page).to_not have_button("Home")
     expect(page).to_not have_button("Profile")
-    expect(page).to_not have_button("")
+    expect(page).to_not have_button("Favorites")
   end
 end

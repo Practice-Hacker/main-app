@@ -4,15 +4,15 @@ rbenv:
 addons:
   postgresql: 9.6
 before_script:
-  - psql -c 'create database main_app_test;' -U postgres
+- psql -c 'create database main_app_test;' -U postgres
 script:
-  - bundle exec rails db:{drop,create,migrate,seed} RAILS_ENV=test
-  - bundle exec rspec
+- bundle exec rails db:{drop,create,migrate,seed} RAILS_ENV=test
+- bundle exec rspec
 running: rspec
 deploy:
   provider: heroku
   api_key:
-    secure:
+    secure: LKAq5CBdVeOH+zEl1vCFDupWbvaJv6joedkSlkCi/B167sABVH53xhjm1D8gNEKIFFPskEGR+fZ9SKo754dEd5qIelqVGNdwev2/mDuZ8MYYo6uQ5YJAPe8+2yTXvHitzz5pqnLLYLPvzRA4RVGRjvF+JGcDcis+qeW3tjkuF3/VSlZP4VlkwSpePvC/pYOAYyTfZlX+i+2RH8n4xS6XtORgt3Ob96etz6MYhtOfCGHLGXl5Vlsp6d3A8ZPTfZl0I23a/u1o7L3blOsyiu+sTFImYkQTwcZ74qT/tdm36kPKpDZA7+4Sd7nGZo/N6KsXiFq0iy2E/OgRkr598qMIr3voU8CBOzjT4Cj03BhUI2Pzofpv7oN8ejTCs7afI6lEv6DhTpt556iNvNHu62efTMXiE1OVHpGKxD67Juep6vCKeqJDRCuIy6klPDtsa1ql2rS+oqVmu8kLjOEXRcWx77LBjC/FlpWJcSQ9hJ1OyBg1g3RtTG2e0nOzGkTBjVwPuw15efWcqfMYzzXG9F/RDKKnmjRO8HMiDK5jEEeKiAsOWhNJOazFP7uo1vh6sgi2XlWudK89kiTJJ9KOV3rzX5yOo47UX0HhmgzjFVduHRstxx5ckf0/mzbs1+a7URit9jVvImQIHVV5bVTR+ZsijxyBfu54IYmfw4GsCO9AFUw=
   app: main-app
   on:
     repo: Practice-Hacker/main-app

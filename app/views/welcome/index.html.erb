@@ -1,4 +1,10 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-
-<%= link_to 'Register', "/auth/google_oauth2?client_id=#{ENV["GOOGLE_CLIENT_ID"]}" %>
+<%= render partial: "/partials/navbar" %>
+<main class="welcome-main d-flex justify-content-center">
+  <section>
+    <h1 class="welcome-main_header">Practice Hacker</h1>
+    <p class ="welcome-main_content">
+      This is a classical music app.
+    </p>
+    <%= link_to 'Login With Google', '/auth/google_oauth2', class: 'btn btn-outline-info' %>
+  </section>
+</main>

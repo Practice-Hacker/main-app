@@ -4,9 +4,9 @@ RSpec.describe "As a new user" do
   it "can log in using the Oauth" do
     visit root_path
 
-    expect(page).to have_link('Register')
+    expect(page).to have_link('Login With Google')
 
-    click_link('Register')
+    click_link('Login With Google')
     expect(current_path).to eq(edit_user_path(User.last.id))
 
     expect(page).to have_content('Edit your profile')
@@ -19,9 +19,9 @@ RSpec.describe "As a new user" do
   it "can edit a new user from the login" do
     visit root_path
 
-    expect(page).to have_link('Register')
+    expect(page).to have_link('Login With Google')
 
-    click_link('Register')
+    click_link('Login With Google')
 
     fill_in('Username', with: 'Bruce Banner')
     fill_in('About me', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')

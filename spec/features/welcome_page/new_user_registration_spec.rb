@@ -7,8 +7,27 @@ RSpec.describe "As a new user" do
     expect(page).to have_link('Register')
 
     click_link('Register')
+    expect(current_path).to eq(edit_user_path(User.last.id))
 
-    expect(current_path).to eq(user_new_path)
+    expect(page).to have_content('Edit your profile')
 
+    expect(User.last.username).to eq("Tony Stark")
+    expect(page).to have_field('Username')
+    expect(page).to have_field('About you')
+  end
+
+  it "can edit a new user from the login" do
+    visit root_path
+
+    expect(page).to have_link('Register')
+
+    click_link('Register')
+
+    fill_in('Username', with: 'Bruce Banner')
+    fill_in('About you', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
+    click_on('Submit Changes')
+
+    expect(User.last.username).to eq('Bruce Banner')
+    expect(User.last.about_you).to eq('Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
   end
 end

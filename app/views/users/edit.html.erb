@@ -1,0 +1,10 @@
+<h1>Edit your profile</h1>
+<section class='username'>
+  <%= form_tag update_user_path, method: :patch do %>
+   <%= label_tag :username %>
+   <%= text_field_tag :username, current_user.username %>
+   <%= label_tag :about_you %>
+   <%= text_field_tag :about_you %>
+   <%= submit_tag 'Submit Changes' %>
+   <% end %>
+</section>

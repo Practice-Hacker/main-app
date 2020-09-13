@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(access_token)
     session[:id] = user.id
-    redirect_to '/dashboard'
+    redirect_to edit_user_path(user.id)
   end
 
   private

@@ -3,9 +3,10 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     user = User.find_by(id: auth[:uid]) || User.new
     user.attributes = {
-      username: auth[:info][:name],
+      username: auth[:info][:username],
       email: auth[:info][:email],
-      access_token: auth[:credentials][:token]
+      access_token: auth[:credentials][:access_token],
+      uid: auth[:uid]
     }
     user.save!
     user

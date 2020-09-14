@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe FavoritePiece, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { should validate_presence_of :user_id }
+    it { should validate_presence_of :piece_id }
+  end
+
+  describe 'relationships' do
+    it {should belong_to :user}
+    it {should belong_to :piece}
+  end
 end

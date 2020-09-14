@@ -8,12 +8,12 @@
   <% end %>
   <%= button_to "Browse Music"%>
 </section>
-<% if @current_user %>
+<% if current_user %>
   <section class='current-user-nav'>
-    <%= button_to "Favorites", user_favorites_path %>
-    <%= button_to "Profile", user_path %>
-    <%= button_to "Home", root_path %>
-    <%= button_to "Log Out", logout_path %>
+    <%= button_to "Favorites", user_favorites_path, method: :get %>
+    <%= button_to "Profile", user_path(current_user.id), method: :get %>
+    <%= button_to "Home", root_path, method: :get %>
+    <%= button_to "Log Out", logout_path, method: :get %>
   </section>
 <% else %>
   <section class="guest-nav">

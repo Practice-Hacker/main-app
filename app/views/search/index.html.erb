@@ -5,8 +5,8 @@
     <thead>
     <tr>
       <th scope="col">Piece Title</th>
-      <th scope="col">Composer Name</th>
       <th scope="col">Subtitle</th>
+      <th scope="col">Composer Name</th>
     </tr>
     </thead>
     <tbody>
@@ -14,8 +14,8 @@
       <% if piece.title %>
         <tr class="piece" id = <%= piece.piece_id %>>
           <td ><%= piece.title %></td>
-          <td><%= piece.name %></td>
           <td><%= piece.subtitle %></td>
+          <td><%= piece.name %></td>
         </tr>
       <% end %>
     <% end %>

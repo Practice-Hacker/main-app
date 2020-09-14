@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get 'logout', to: 'sessions#destroy'
 
-  # resources :users, only: [:show, :edit]
-  get "/profile/:user_id", to: "users#show"
-  get "/profile/:user_id/edit", to: "users#edit"
-  patch "/profile", to: "users#update"
+  resources :users, only: [:show, :edit]
+  # get "/users/:id", to: "users#show"
+  # get "/users/:id/edit", to: "users#edit"
+  patch "/users/:id", to: "users#update", as: :update_user
 
   resources :user_favorites, only: [:index]
-  patch '/users/:id', to: 'users#update', as: :update_user
 end

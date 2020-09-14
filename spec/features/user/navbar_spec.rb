@@ -18,7 +18,7 @@ RSpec.describe 'user navbar' do
       expect(page).to have_button("Log Out")
     end
 
-    xit 'on Profile page after a user is logged in' do
+    it 'on Profile page after a user is logged in' do
       click_button "Profile"
       expect(page).to have_button("Search")
       expect(page).to have_button("Browse Music")
@@ -28,7 +28,7 @@ RSpec.describe 'user navbar' do
       expect(page).to have_button("Log Out")
     end
 
-    xit 'on Home page after a user is logged in' do
+    it 'on Home page after a user is logged in' do
       click_button "Home"
       expect(page).to have_button("Search")
       expect(page).to have_button("Browse Music")
@@ -38,7 +38,7 @@ RSpec.describe 'user navbar' do
       expect(page).to have_button("Log Out")
     end
 
-    xit "doesn't appear on Home page after a user logs out" do
+    it "doesn't appear on Home page after a user logs out" do
       click_button "Log Out"
       expect(page).to have_button("Search")
       expect(page).to have_button("Browse Music")

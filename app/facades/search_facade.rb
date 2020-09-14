@@ -1,5 +1,7 @@
 class SearchFacade
   def self.pieces(query)
+    return [] if search_data(query)[:results].empty?
+
     search_data(query)[:results].map do |result|
       Piece.new(result)
     end

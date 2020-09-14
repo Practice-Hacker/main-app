@@ -1,13 +1,23 @@
-<!-- add logic to filter if the viewer is a user or a guest -->
 <!-- add url and method to line 5 once we have a path for search functionality -->
 <!-- add path and method to line 10 once we have browse functionality -->
-<section class="guest-nav">
+<section class='all-user-nav'
   <%= form_with do %>
     <%= label_tag(:q, "Search for Music") %>
     <%= text_field_tag(:q) %>
     <%= submit_tag("Search") %>
   <% end %>
   <%= button_to "Browse Music"%>
-  <%= button_to "Register", "/auth/google_oauth2" %>
-  <%= button_to "Log In", "/auth/google_oauth2" %>
 </section>
+<% if current_user %>
+  <section class='current-user-nav'>
+    <%= button_to "Favorites", user_favorites_path, method: :get %>
+    <%= button_to "Profile", user_path(current_user.id), method: :get %>
+    <%= button_to "Home", root_path, method: :get %>
+    <%= button_to "Log Out", logout_path, method: :get %>
+  </section>
+<% else %>
+  <section class="guest-nav">
+    <%= button_to "Register", "/auth/google_oauth2" %>
+    <%= button_to "Log In", "/auth/google_oauth2" %>
+  </section>
+<% end %>

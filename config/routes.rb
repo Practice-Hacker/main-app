@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   resources :users, only: [:show, :edit]
+  resources :search, only: [:index]
   resources :user_favorites, only: [:index]
   patch '/users/:id', to: 'users#update', as: :update_user
 end

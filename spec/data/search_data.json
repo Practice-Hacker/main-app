@@ -1,0 +1,234 @@
+{
+  "next": 20,
+  "results": [
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": null
+      }
+    },
+    {
+      "composer": {
+        "name": "Thomas Adès",
+        "id": "130"
+      },
+      "work": {
+        "title": "Violin Concerto, \"Concentric Paths\"",
+        "id": "28072",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Ludwig van Beethoven",
+        "id": "145"
+      },
+      "work": {
+        "title": "Violin Concerto in D major, op. 61",
+        "id": "16458",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Ludwig van Beethoven",
+        "id": "145"
+      },
+      "work": {
+        "title": "Violin Sonata no. 9 in A major, op. 47, \"Kreutzer\"",
+        "id": "16331",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Leonard Bernstein",
+        "id": "135"
+      },
+      "work": {
+        "title": "Serenade, after Plato's \"Symposium\"",
+        "id": "28085",
+        "subtitle": "For violin and orchestra"
+      }
+    },
+    {
+      "composer": {
+        "name": "Johannes Brahms",
+        "id": "80"
+      },
+      "work": {
+        "title": "Violin Concerto in D major, op. 77",
+        "id": "7764",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": "Sinfonia concertante in E flat major, K.364",
+        "id": "23838",
+        "subtitle": "For violin, viola and orchestra"
+      }
+    },
+    {
+      "composer": {
+        "name": "John Adams",
+        "id": "149"
+      },
+      "work": {
+        "title": "The Dharma at Big Sur",
+        "id": "28067",
+        "subtitle": "For electric violin and orchestra "
+      }
+    },
+    {
+      "composer": {
+        "name": "John Adams",
+        "id": "149"
+      },
+      "work": {
+        "title": "Violin Concerto",
+        "id": "16887",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Ludwig van Beethoven",
+        "id": "145"
+      },
+      "work": {
+        "title": "Violin Sonata no. 7 in C minor, op. 30 no. 2",
+        "id": "16336",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Johannes Brahms",
+        "id": "80"
+      },
+      "work": {
+        "title": "Double Concerto in A minor, op. 102",
+        "id": "7766",
+        "subtitle": "For violin, cello and orchestra"
+      }
+    },
+    {
+      "composer": {
+        "name": "Johannes Brahms",
+        "id": "80"
+      },
+      "work": {
+        "title": "Violin Sonata no. 1 in G major, op. 78",
+        "id": "7791",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Camargo Guarnieri",
+        "id": "159"
+      },
+      "work": {
+        "title": "Violin Concerto no. 1",
+        "id": "28087",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Camargo Guarnieri",
+        "id": "159"
+      },
+      "work": {
+        "title": "Violin Concerto no. 2",
+        "id": "28088",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": "Violin Concerto no. 3 in G major, K.216",
+        "id": "23779",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": "Violin Concerto no. 5 in A major, K.219, \"Turkish\"",
+        "id": "23574",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": "Violin Sonata no. 21 in E minor, K.304",
+        "id": "23563",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Wolfgang Amadeus Mozart",
+        "id": "196"
+      },
+      "work": {
+        "title": "Violin Sonata no. 35 in A major, K.526",
+        "id": "23327",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Igor Stravinsky",
+        "id": "190"
+      },
+      "work": {
+        "title": "Violin Concerto",
+        "id": "22509",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "Ludwig van Beethoven",
+        "id": "145"
+      },
+      "work": {
+        "title": "Violin Sonata no. 5 in F major, op. 24, \"Spring\"",
+        "id": "16123",
+        "subtitle": ""
+      }
+    },
+    {
+      "composer": {
+        "name": "John Adams",
+        "id": "149"
+      },
+      "work": {
+        "title": "Road Movies",
+        "id": "16895",
+        "subtitle": "For violin and piano"
+      }
+    }
+  ]
+}

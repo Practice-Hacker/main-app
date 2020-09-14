@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to root_path
+    set_user.save!
+    redirect_to user_path(set_user.id)
   end
 
   private

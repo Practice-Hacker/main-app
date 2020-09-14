@@ -1,4 +1,9 @@
 <h1>Search Results</h1>
+<% if @pieces.empty? %>
+  <section class="">
+    <p> We are sorry! We currently have no results for your query </p>
+  </section>
+  <% else %>
 
 <section class="pieces">
   <table class="table">
@@ -22,3 +27,4 @@
     </tbody>
   </table>
 </section>
+<% end %>

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit]
   resources :userfavorites, only: [:index]
+  resources :search, only: [:index]
   patch '/users/:id', to: 'users#update', as: :update_user
 end

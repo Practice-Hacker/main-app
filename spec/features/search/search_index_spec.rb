@@ -9,7 +9,7 @@ RSpec.describe 'Search Index' do
   end
   it 'should show piece information' do
     # Stub the request from the sinatra api
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    data_response = stub_request(:get, 'https://practice-hacker-sinatra.herokuapp.com/api/v1/search?q=violin').to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit root_path
@@ -34,7 +34,7 @@ RSpec.describe 'Search Index' do
   end
 
   it 'should render something different if page had no results' do
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=qwerrewer")
+    data_response = stub_request(:get, 'https://practice-hacker-sinatra.herokuapp.com/api/v1/search?q=qwerrewer')
                     .to_return(status: 200, body: File.read('spec/data/search_not_found.json'))
 
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)

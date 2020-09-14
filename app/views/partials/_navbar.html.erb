@@ -10,7 +10,7 @@
 </section>
 <% if current_user %>
   <section class='current-user-nav'>
-    <%= button_to "Favorites", userfavorites_path, method: :get %>
+    <%= button_to "Favorites", user_favorites_path, method: :get %>
     <%= button_to "Profile", user_path(current_user.id), method: :get %>
     <%= button_to "Home", root_path, method: :get %>
     <%= button_to "Log Out", logout_path, method: :get %>

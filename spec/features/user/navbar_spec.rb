@@ -9,43 +9,43 @@ RSpec.describe 'user navbar' do
     end
 
     it 'on Favorites page after a user is logged in' do
-      click_button "Favorites"
+      click_link "Favorites"
       expect(page).to have_button("Search")
-      expect(page).to have_button("Browse Music")
-      expect(page).to have_button("Favorites")
-      expect(page).to have_button("Profile")
-      expect(page).to have_button("Home")
-      expect(page).to have_button("Log Out")
+      expect(page).to have_link("Browse Music")
+      expect(page).to have_link("Favorites")
+      expect(page).to have_link("Profile")
+      expect(page).to have_link("Home")
+      expect(page).to have_link("Log Out")
     end
 
     it 'on Profile page after a user is logged in' do
-      click_button "Profile"
+      click_link "Profile"
       expect(page).to have_button("Search")
-      expect(page).to have_button("Browse Music")
-      expect(page).to have_button("Favorites")
-      expect(page).to have_button("Profile")
-      expect(page).to have_button("Home")
-      expect(page).to have_button("Log Out")
+      expect(page).to have_link("Browse Music")
+      expect(page).to have_link("Favorites")
+      expect(page).to have_link("Profile")
+      expect(page).to have_link("Home")
+      expect(page).to have_link("Log Out")
     end
 
     it 'on Home page after a user is logged in' do
-      click_button "Home"
+      click_link "Home"
       expect(page).to have_button("Search")
-      expect(page).to have_button("Browse Music")
-      expect(page).to have_button("Favorites")
-      expect(page).to have_button("Profile")
-      expect(page).to have_button("Home")
-      expect(page).to have_button("Log Out")
+      expect(page).to have_link("Browse Music")
+      expect(page).to have_link("Favorites")
+      expect(page).to have_link("Profile")
+      expect(page).to have_link("Home")
+      expect(page).to have_link("Log Out")
     end
 
     it "doesn't appear on Home page after a user logs out" do
-      click_button "Log Out"
+      click_link "Log Out"
       expect(page).to have_button("Search")
-      expect(page).to have_button("Browse Music")
-      expect(page).to_not have_button("Favorites")
-      expect(page).to_not have_button("Profile")
-      expect(page).to_not have_button("Home")
-      expect(page).to_not have_button("Log Out")
+      expect(page).to have_link("Browse Music")
+      expect(page).to_not have_link("Favorites")
+      expect(page).to_not have_link("Profile")
+      expect(page).to_not have_link("Home")
+      expect(page).to_not have_link("Log Out")
     end
   end
 end

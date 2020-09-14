@@ -1,6 +1,5 @@
 <!-- add url and method to line 5 once we have a path for search functionality -->
 <!-- add path and method to line 10 once we have browse functionality -->
-<<<<<<< HEAD
 <navbar>
   <section class='all-user-nav'>
     <%= form_tag '/search', method: :get do %>
@@ -13,7 +12,7 @@
   <% if current_user %>
     <section class='current-user-nav'>
       <%= link_to "Favorites" , user_favorites_path%>
-      <%= link_to "Profile", user_path(current_user.id) %>
+      <%= link_to "Profile", "/users/#{current_user.id}" %>
       <%= link_to "Home", root_path %>
       <%= link_to "Log Out", logout_path %>
     </section>

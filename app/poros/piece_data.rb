@@ -1,4 +1,4 @@
-class Piece
+class PieceData
   attr_reader :title, :name, :subtitle, :piece_id
   def initialize(data)
     @name = data[:composer][:name]

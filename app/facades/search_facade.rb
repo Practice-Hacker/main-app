@@ -3,7 +3,7 @@ class SearchFacade
     return [] if search_data(query)[:results].empty?
 
     search_data(query)[:results].map do |result|
-      Piece.new(result)
+      PieceData.new(result)
     end
   end
 

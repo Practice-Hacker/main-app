@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
     redirect_to edit_user_path(user.id)
   end
 
+  def destroy
+    session.destroy
+    redirect_to root_path
+  end
+
   private
 
   def access_token

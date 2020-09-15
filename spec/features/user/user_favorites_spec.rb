@@ -27,9 +27,6 @@ RSpec.describe "As an authenticated user" do
     FavoritePiece.create!(user_id: user.id, piece_id: piece11.id)
     FavoritePiece.create!(user_id: user.id, piece_id: piece12.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    # favorite_piece1 = FactoryBot.create(:favorite_piece, piece: piece1, user: user)
-    # favorite_piece2 = FactoryBot.create(:favorite_piece, piece: piece3, user: user)
-
 
     visit(user_favorites_path)
 

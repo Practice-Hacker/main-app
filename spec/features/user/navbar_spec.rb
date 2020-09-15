@@ -38,6 +38,19 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Log Out")
     end
 
+    it "on the Piece Show page after a user is logged in" do
+      piece = Piece.create!(title: "Such a good title", subtitle: "NOPE", composer: "The bestest composer")
+      visit piece_show_path(piece.id)
+
+      expect(page).to have_button("Search")
+      expect(page).to have_link("Browse Music")
+      expect(page).to have_link("Favorites")
+      expect(page).to have_link("Profile")
+      expect(page).to have_link("Home")
+      expect(page).to have_link("Log Out")
+    end
+
+
     it "doesn't appear on Home page after a user logs out" do
       click_link "Log Out"
       expect(page).to have_button("Search")

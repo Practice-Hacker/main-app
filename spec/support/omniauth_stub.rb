@@ -7,7 +7,7 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
     email: 'tony@stark.com'
   },
   credentials: {
-    access_token: 'token',
+    token: 'token',
     refresh_token: 'refresh_token'
   }
 })

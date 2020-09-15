@@ -1,4 +1,11 @@
 <h1>Edit your profile</h1>
+
+<% flash.each do |name, msg| %>
+      <div class= "<%=name%>-flash">
+        <p><%= msg %></p>
+      </div>
+    <% end %>
+
 <section class='username'>
   <%= form_tag update_user_path, method: :patch do %>
    <%= label_tag :username %>

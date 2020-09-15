@@ -3,9 +3,9 @@ class User < ApplicationRecord
 
   has_many :tips
   has_many :favorite_pieces
+  has_many :pieces, through: :favorite_pieces
 
   def self.from_omniauth(auth)
-
     user = User.find_by(uid: auth[:uid]) || User.new
     user.attributes = {
       email: auth[:info][:email],

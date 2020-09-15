@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
   resources :user_favorites, only: [:index]
   patch '/users/:id', to: 'users#update', as: :update_user
+  resources :piece, only: [:show], as: :piece_show
 end

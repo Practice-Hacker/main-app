@@ -9,7 +9,7 @@ class User < ApplicationRecord
     user = User.find_by(uid: auth[:uid]) || User.new
     user.attributes = {
       email: auth[:info][:email],
-      access_token: auth[:credentials][:access_token],
+      access_token: auth[:credentials][:token],
       uid: auth[:uid]
     }
     user.save!

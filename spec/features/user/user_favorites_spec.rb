@@ -55,5 +55,5 @@ RSpec.describe "As an authenticated user" do
   end
 end
 # TODO: Add pagination to this page so that we get up to 10 pieces on one page
-# Number of contributions to this piece
 # and I should also see a “Next Page” button at the bottom of the page
+# Number of contributions to this piece

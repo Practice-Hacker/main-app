@@ -7,7 +7,7 @@ RSpec.describe 'Search Index' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
   end
-  xit 'should show piece information' do
+  it 'should show piece information' do
     # Stub the request from the sinatra api
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
@@ -33,7 +33,7 @@ RSpec.describe 'Search Index' do
     end
   end
 
-  xit 'should render something different if page had no results' do
+  it 'should render something different if page had no results' do
     stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=qwerrewer").to_return(status: 200, body: File.read('spec/data/search_not_found.json'))
 
     visit root_path

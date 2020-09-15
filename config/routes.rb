@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update", as: :update_user
 
   resources :search, only: [:index]
-  
+
   resources :user_favorites, only: [:index]
+  resources :pieces, only: [:show], as: :piece_show
 end

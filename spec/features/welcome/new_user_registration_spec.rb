@@ -11,7 +11,6 @@ RSpec.describe "As a new user" do
 
     expect(page).to have_content('Edit your profile')
 
-    expect(User.last.username).to eq("Tony Stark")
     expect(page).to have_field('Username')
     expect(page).to have_field('About me')
   end
@@ -26,7 +25,7 @@ RSpec.describe "As a new user" do
     fill_in('Username', with: 'Bruce Banner')
     fill_in('About me', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
     click_on('Submit Changes')
-    
+
     expect(User.last.username).to eq('Bruce Banner')
     expect(User.last.about_me).to eq('Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
   end

@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "piece show page" do
-  it "should have the name of the piece and composer" do
-    piece = Piece.create!(title: "Such a good title", subtitle: "NOPE", composer: "The bestest composer")
+  it "should have the name of the piece and composer (dummy data test)" do
+    piece = Piece.create!(title: "Such a good title", subtitle: "no subtitle here", composer: "The bestest composer")
     visit piece_show_path(piece.id)
+    save_and_open_page
     expect(page).to have_content(piece.title)
     expect(page).to have_content(piece.composer)
   end

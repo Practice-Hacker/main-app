@@ -6,9 +6,13 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    @user.update(user_params)
-    set_user.save!
-    redirect_to user_path(set_user.id)
+    if @user.update(user_params)
+      set_user.save!
+      redirect_to user_path(set_user.id)
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+      redirect_to edit_user_path(set_user.id)
+    end
   end
 
   private

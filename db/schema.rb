@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_160830) do
+ActiveRecord::Schema.define(version: 2020_09_14_155246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorite_pieces", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "piece_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["piece_id"], name: "index_favorite_pieces_on_piece_id"
+    t.index ["user_id"], name: "index_favorite_pieces_on_user_id"
+  end
+
+  create_table "pieces", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.string "composer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.integer "difficulty_rating"
+    t.text "tip"
+    t.bigint "piece_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["piece_id"], name: "index_tips_on_piece_id"
+    t.index ["user_id"], name: "index_tips_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -26,4 +54,8 @@ ActiveRecord::Schema.define(version: 2020_09_13_160830) do
     t.text "about_me"
   end
 
+  add_foreign_key "favorite_pieces", "pieces"
+  add_foreign_key "favorite_pieces", "users"
+  add_foreign_key "tips", "pieces"
+  add_foreign_key "tips", "users"
 end

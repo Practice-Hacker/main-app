@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   validates :username, uniqueness: true
+  validates_presence_of :uid, :access_token, :email
+
+  has_many :tips
+  has_many :favorite_pieces
 
   def self.from_omniauth(auth)
     user = User.find_by(uid: auth[:uid]) || User.new

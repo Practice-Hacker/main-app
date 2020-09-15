@@ -29,4 +29,19 @@ RSpec.describe "As a new user" do
     expect(User.last.username).to eq('Bruce Banner')
     expect(User.last.about_me).to eq('Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
   end
+
+  it "can login an existing user to their profile" do
+    User.create!(username:"Tony Stark" ,uid: "12345678" ,access_token: "token" ,email: "tony@stark.com")
+
+    visit root_path
+
+    click_on('Log In')
+
+    expect(current_path).to eq(user_path(User.find_by(username: "Tony Stark").id))
+
+    click_on('Log Out')
+
+    click_on('Log In')
+    expect(current_path).to eq(user_path(User.find_by(username: "Tony Stark").id))
+  end
 end

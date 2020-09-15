@@ -1,12 +1,12 @@
 <%= render partial: "/partials/navbar" %>
 <section class='pieces'>
-<% current_user.favorite_pieces.each do |pieces| %>
+<% current_user.favorite_pieces.each do |favorite_piece| %>
   <section class='titles'>
-
+    <%= favorite_piece.piece.title %>
   </section>
 
   <section class='composers'>
-
+    <%= favorite_piece.piece.composer %>
   </section>
 
   <section class='contributions'>

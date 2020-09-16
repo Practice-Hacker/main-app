@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user, only: [:show, :edit, :update, :destroy]
   def show
   end
 
@@ -7,17 +7,17 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      set_user.save!
-      redirect_to user_path(set_user.id)
+      user.save!
+      redirect_to user_path(user.id)
     else
       flash[:error] = @user.errors.full_messages.to_sentence
-      redirect_to edit_user_path(set_user.id)
+      redirect_to edit_user_path(user.id)
     end
   end
 
   private
 
-  def set_user
+  def user
     @user = User.find(params[:id])
   end
 

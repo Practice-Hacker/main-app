@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
 
   resources :user_favorites, only: [:index]
+  resources :piece, only: [:show]
   resources :pieces, only: [:show], as: :piece_show
 end

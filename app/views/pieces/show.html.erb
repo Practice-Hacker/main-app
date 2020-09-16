@@ -1,10 +1,16 @@
 <%= render partial: "/partials/navbar" %>
 
+<%= link_to "Add Tip", "/pieces/#{@piece.id}/tips/new", method: :get %>
+
 <h1 class="title"><%= @piece.title %>: <%= @piece.subtitle %></h1>
 <h3 class="composer">Composed by: <%= @piece.composer %></h3>
 <p class="average-rating">
 </p>
 <p class="tip-count">
 </p>
-<section class="tips">
-</section>
+<% @piece.tips.each do |user_tip| %>
+  <section id="tips-<%= user_tip.id %>">
+    <p>Tip Info: <%= user_tip.tip %></p>
+    <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+  </section>
+<% end %>

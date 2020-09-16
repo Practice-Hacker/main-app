@@ -8,5 +8,9 @@
 </p>
 <p class="tip-count">
 </p>
-<section class="tips">
-</section>
+<% @piece.tips.each do |user_tip| %>
+  <section id="tips-<%= user_tip.id %>">
+    <p>Tip Info: <%= user_tip.tip %></p>
+    <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+  </section>
+<% end %>

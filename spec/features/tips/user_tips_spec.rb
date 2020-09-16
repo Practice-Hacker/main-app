@@ -20,4 +20,28 @@ RSpec.describe "user tips CRUD functionality" do
     end
   end
 
+  describe "when a user clicks the link to add a tip to a piece" do
+    it "allows user to create a new tip" do
+      visit "/pieces/#{@piece.id}"
+
+      click_on "Add Tip"
+
+      fill_in :tip, with: "Do the thing, yeah!"
+      select 3
+      click_on "Create Tip"
+
+      user_tip = Tip.last
+
+      save_and_open_page
+      binding.pry
+      expect(current_path).to eq("/pieces/#{@piece.id}")
+      expect(user_tip.tip).to eq("Do the thing, yeah!")
+      expect(user_tip.difficulty_rating).to eq(3)
+
+      within "#tips-#{user_tip.id}" do
+        expect(page).to have_content("Tip Info: Do the thing, yeah!")
+        expect(page).to have_content("Difficulty Rating: 3/5")
+      end
+    end
+  end
 end

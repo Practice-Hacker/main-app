@@ -27,13 +27,12 @@ RSpec.describe "user tips CRUD functionality" do
       click_on "Add Tip"
 
       fill_in :tip, with: "Do the thing, yeah!"
-      select 3
+      select 3, from: :difficulty_rating
       click_on "Create Tip"
 
       user_tip = Tip.last
 
       save_and_open_page
-      binding.pry
       expect(current_path).to eq("/pieces/#{@piece.id}")
       expect(user_tip.tip).to eq("Do the thing, yeah!")
       expect(user_tip.difficulty_rating).to eq(3)

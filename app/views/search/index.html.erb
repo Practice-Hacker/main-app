@@ -18,7 +18,7 @@
     <% @pieces.each do |piece| %>
       <% if piece.title %>
         <tr class="piece" id = <%= piece.piece_id %>>
-          <td ><%= piece.title %></td>
+          <td ><%= link_to piece.title, piece_show_path(piece.piece_id) %></td>
           <td><%= piece.subtitle %></td>
           <td><%= piece.name %></td>
         </tr>

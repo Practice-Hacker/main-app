@@ -10,8 +10,7 @@ RSpec.describe PieceData do
     expect(piece.name).to eq(result[:composer][:name])
     expect(piece.title).to eq(result[:work][:title])
     expect(piece.subtitle).to eq(result[:work][:subtitle])
-    expect(piece.piece_id).to eq(result[:work][:id])
+    expect(piece.api_work_id).to eq(result[:work][:id])
   end
 
 end
-

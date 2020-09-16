@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :piece, only: [:show]
   resources :pieces, only: [:show], as: :piece_show
-
+  
   get '/pieces/:id/tips/new', to: 'tips#new'
   post '/pieces/:id', to: 'tips#create'
 

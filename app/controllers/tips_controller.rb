@@ -4,20 +4,13 @@ class TipsController < ApplicationController
   end
 
   def create
-    @piece = Piece.find(params[:id])
-    tip = @piece.tips.create(tip_params)
+    tip = Tip.create(tip: params[:tip], difficulty_rating: params[:difficulty_rating], user_id: current_user.id, piece_id: params[:id])
     if tip.save
       flash[:success] = "Your tip has been added to the piece"
-      redirect_to "/pieces/#{@piece.id}"
+      redirect_to "/pieces/#{params[:id]}"
     else
       flash[:error] = tip.errors.full_messages.to_sentence
-      redirect_to "/pieces/#{@piece.id}/tips/new"
+      redirect_to "/pieces/#{params[:id]}/tips/new"
     end
-  end
-
-  private
-
-  def tip_params
-    params.permit(:tip, :difficulty_rating)
   end
 end

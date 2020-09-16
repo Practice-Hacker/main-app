@@ -1,4 +1,16 @@
 <%= render partial: "/partials/navbar" %>
-<h1>UserFavorites#index</h1>
+<section class='pieces'>
+<% current_user.favorite_pieces.each do |favorite_piece| %>
+  <section class='title'>
+    <%= link_to favorite_piece.piece.title, piece_path(favorite_piece.piece.id) %>
+  </section>
 
-<p>Find me in app/views/user_favorites/index.html.erb</p>
+  <section class='composer'>
+    <%= favorite_piece.piece.composer %>
+  </section>
+
+  <section class='contributions'>
+
+  </section>
+<% end %>
+</section>

@@ -11,6 +11,11 @@ class UsersController < ApplicationController
       return render :edit
     end
     if @user.update(user_params(params[:username], params[:role], params[:about_me]))
+      if params[:skills]
+        params[:skills].each do |skill|
+          Skill.create!(user_id: current_user.id, skill: skill)
+        end
+      end
       user.save!
       redirect_to user_path(user.id)
     else

@@ -12,10 +12,20 @@
 
 </section>
 
+<% if current_user.skills.size > 0 %>
 <section class="my-skills">
-
+  <h3>My Skills:</h3>
+  <ul>
+    <% current_user.skills.each do |skill| %>
+    <li><%= skill.skill %></li>
+    <% end %>
+  </ul>
 </section>
-
+<% else %>
+ <section class='my-skills'>
+  <p>You currently have no skills</p>
+ </section> 
+<% end %>
 <section class="pieces-contributed-to">
 
 </section>

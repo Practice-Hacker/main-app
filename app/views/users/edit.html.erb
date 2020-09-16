@@ -11,14 +11,17 @@
    <%= label_tag :username %>
    <%= text_field_tag :username, current_user.username %>
    <%= label_tag :about_me %>
-   <%= text_field_tag :about_me %>
+   <%= text_field_tag :about_me, current_user.about_me %>
    <%= label_tag :role %>
    <%= select_tag :role, options_for_select(['Teacher', 'Student', 'Performer']), multiple: true %>
+   <%= label_tag :skills %>
+   <%= select_tag :skills, options_for_select(['Solo', 'Chamber', 'orchestral', 'pedagogy', 'complex rhythms', 'extended technique' ]), multiple: true %>
    <%= submit_tag 'Submit Changes' %>
    <% end %>
 </section>
 <script type="text/javascript">
  $(document).ready(function() {
      $('#role').multiselect();
+     $('#skills').multiselect();
  });
 </script>

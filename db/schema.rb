@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_09_16_050435) do
+=======
+ActiveRecord::Schema.define(version: 2020_09_16_170041) do
+>>>>>>> 4f27719aa2c79bc88b2713bfd27933ad70018642
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +35,14 @@ ActiveRecord::Schema.define(version: 2020_09_16_050435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "api_work_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "skill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "tips", force: :cascade do |t|
@@ -57,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_050435) do
 
   add_foreign_key "favorite_pieces", "pieces"
   add_foreign_key "favorite_pieces", "users"
+  add_foreign_key "skills", "users"
   add_foreign_key "tips", "pieces"
   add_foreign_key "tips", "users"
 end

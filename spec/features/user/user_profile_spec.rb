@@ -32,6 +32,7 @@ RSpec.describe "authenticated user profile page" do
     click_on "Edit Profile"
 
     fill_in :username, with: "Bruce Banner"
+    select 'Teacher', from: 'Role'
     click_on "Submit Changes"
 
     expect(page).to have_content("Bruce Banner")
@@ -47,12 +48,14 @@ RSpec.describe "authenticated user profile page" do
     click_on "Edit Profile"
 
     fill_in :username, with: "StringsNThings"
+    select 'Teacher', from: 'Role'
     click_on "Submit Changes"
 
     expect(page).to have_content("Username has already been taken")
     expect(current_path).to eq("/users/#{@user.id}/edit")
 
     fill_in :username, with: "Bruce Banner"
+    select 'Teacher', from: 'Role'
     click_on "Submit Changes"
 
     expect(current_path).to eq("/users/#{@user.id}")

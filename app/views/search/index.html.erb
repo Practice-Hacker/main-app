@@ -17,8 +17,13 @@
     <tbody>
     <% @pieces.each do |piece| %>
       <% if piece.title %>
+<<<<<<< HEAD
         <tr class="piece" id = <%= piece.api_work_id %>>
           <td ><%= link_to piece.title, piece_show_path(piece.api_work_id) %></td>
+=======
+        <tr class="piece" id = <%= piece.piece_id %>>
+          <td ><%= link_to piece.title, piece_show_path(piece.piece_id) %></td>
+>>>>>>> 4f27719aa2c79bc88b2713bfd27933ad70018642
           <td><%= piece.subtitle %></td>
           <td><%= piece.composer %></td>
         </tr>

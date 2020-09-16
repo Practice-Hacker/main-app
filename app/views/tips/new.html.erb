@@ -1,0 +1,13 @@
+<h1 align= "center">Give people a tip!</h1>
+
+<center>
+  <%= form_tag "/pieces/#{@piece.id}", method: :post do |f| %>
+    <%= label_tag :tip %>
+    <%= text_field_tag :tip %>
+    <br>
+    <%= label_tag :difficulty_rating %>
+    <%= select_tag :difficulty_rating, options_for_select([[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]]) %>
+    <br>
+    <%= submit_tag "Create Tip" %>
+  <% end %>
+</center>

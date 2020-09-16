@@ -4,7 +4,7 @@ RSpec.describe 'guest navbar' do
   it 'has search, browse, register, and log in' do
     visit root_path
     expect(page).to have_link("Browse Music")
-    expect(page).to have_field("Search for Music")
+    expect(page).to have_field("q")
     expect(page).to have_link("Log In")
     expect(page).to have_link("Register")
     expect(page).to_not have_link("Home")
@@ -17,7 +17,7 @@ RSpec.describe 'guest navbar' do
     visit piece_show_path(piece.id)
 
     expect(page).to have_link("Browse Music")
-    expect(page).to have_field("Search for Music")
+    expect(page).to have_field("q")
     expect(page).to have_link("Log In")
     expect(page).to have_link("Register")
     expect(page).to_not have_link("Home")

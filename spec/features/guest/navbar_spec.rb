@@ -13,8 +13,11 @@ RSpec.describe 'guest navbar' do
   end
 
   it 'shows up on the piece show page' do
-    piece = Piece.create!(title: "Such a good title", subtitle: "NOPE", composer: "The bestest composer")
-    visit piece_show_path(piece.id)
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
+    parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
+    piece_id = parsed_data[:work][:id]
+
+    visit piece_show_path(piece_id)
 
     expect(page).to have_link("Browse Music")
     expect(page).to have_field("Search for Music")

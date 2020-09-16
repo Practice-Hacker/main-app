@@ -1,25 +1,48 @@
 <!-- add url and method to line 5 once we have a path for search functionality -->
 <!-- add path and method to line 10 once we have browse functionality -->
-<navbar>
-  <section class='all-user-nav'>
-    <%= form_tag '/search', method: :get do %>
-      <%= label_tag(:q, "Search for Music") %>
-      <%= text_field_tag(:q, nil, placeholder: 'composer name, piece title') %>
-      <%= submit_tag("Search") %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Practice H</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% if current_user %>
+      <ul class="navbar-nav mr-auto current-user-nav">
+        <li class="nav-item">
+          <%= link_to 'Home', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Browse Music','#', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Profile', user_path(current_user.id), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Favorites', user_favorites_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log Out', logout_path, class: "nav-link" %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="navbar-nav mr-auto guest-nav">
+        <li class="nav-item">
+          <%= link_to 'Browse Music','#', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Register', "/auth/google_oauth2", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log In', "/auth/google_oauth2", class: "nav-link" %>
+        </li>
+      </ul>
+
     <% end %>
-    <%= link_to "Browse Music" %>
-  </section>
-  <% if current_user %>
-    <section class='current-user-nav'>
-      <%= link_to "Favorites" , user_favorites_path%>
-      <%= link_to "Profile", "/users/#{current_user.id}" %>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Log Out", logout_path %>
-    </section>
-  <% else %>
-    <section class="guest-nav">
-      <%= link_to "Register", "/auth/google_oauth2" %>
-      <%= link_to "Log In", "/auth/google_oauth2" %>
-    </section>
-  <% end %>
-</navbar>
+    <%= form_tag '/search', method: :get, class: 'form-inline my-2 my-lg-0' do %>
+      <%= text_field_tag :q, nil, placeholder: 'Search Music', class: 'form-control mr-sm-2', type: 'search' %>
+      <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+    <% end %>
+  </div>
+</nav>

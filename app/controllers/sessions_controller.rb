@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def create
+    # require "pry"; binding.pry
     user = User.from_omniauth(access_token)
     session[:id] = user.id
     if user.username.nil?

@@ -6,7 +6,16 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(user_params)
+    if params[:role].nil?
+      flash[:notice] = "You must select a role"
+      return render :edit
+    end
+    if @user.update(user_params(params[:username], params[:role], params[:about_me]))
+      if params[:skills]
+        params[:skills].each do |skill|
+          Skill.create!(user_id: current_user.id, skill: skill)
+        end
+      end
       user.save!
       redirect_to user_path(user.id)
     else
@@ -21,7 +30,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_params
-    params.permit(:username, :about_me)
+  def user_params(username, role, about)
+    roles = role.join(" ")
+    {username: username, role: roles, about_me: about}
   end
 end

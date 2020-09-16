@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
+    if params[:role].nil?
+      flash[:notice] = "You must select a role"
+      return render :edit
+    end
     if @user.update(user_params(params[:username], params[:role], params[:about_me]))
       user.save!
       redirect_to user_path(user.id)

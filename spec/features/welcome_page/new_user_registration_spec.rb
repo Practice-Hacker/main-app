@@ -25,6 +25,8 @@ RSpec.describe "As a new user" do
 
     fill_in('Username', with: 'Bruce Banner')
     fill_in('About me', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
+    select 'Teacher', from: 'Role'
+
     click_on('Submit Changes')
 
     expect(User.last.username).to eq('Bruce Banner')
@@ -59,5 +61,20 @@ RSpec.describe "As a new user" do
     # I should be able to select roles (Student, Teacher, Performer) from a multi select field and add them to my profile,
     # And when I click on "Submit Changes on the edit profile page,
     # I should be redirected to my user profile show page and I should see the roles I selected with my username on the page.
+  end
+
+  it "returns a flash notice if 'Role' is not selected" do
+    user = User.create!(username:"Tony Stark" ,uid: "12345678" ,access_token: "token" ,email: "tony@stark.com")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit edit_user_path(user.id)
+
+    fill_in('Username', with: 'Bruce Banner')
+    fill_in('About me', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')
+    click_button 'Submit Changes'
+
+    expect(current_path).to eq(user_path(user.id))
+    # render :edit returns the user to the edit page but the path is not the same
+    expect(page).to have_content("You must select a role")
   end
 end

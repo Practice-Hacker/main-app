@@ -1,19 +1,8 @@
-language: ruby
-rbenv:
-- 2.5.3
-addons:
-  postgresql: 9.6
-before_script:
-- psql -c 'create database main_app_test;' -U postgres
-script:
-- bundle exec rails db:{drop,create,migrate,seed} RAILS_ENV=test
-- bundle exec rspec
-running: rspec
 deploy:
   provider: heroku
   api_key:
-    secure: FC6bWcFDVl1elO9GLck4tRddI6frULAKk+aqiZqDcNzG6lF6JIGaqYIElrh6rPXo4TdRUTYvfP1rC97NbFmaKdzHelVWE5DherNRa5drLf6/L8YlxKSCKZ+GJjcCoh3X5BsEDbNMsQQr2/cLgnswBVreiZuaOIW9EkcabqGQkHy8dui6VBGREA8NfH4hRoGNbrzbVmDutrQgWnQ2BLabXmcunY3EePYwfG9zfxBP7gvxnk9EJoR0nKo40HjnOlApvc1lm/eNINvbdB31+TO6DOe/FqOBWn1ibe4KvpYD53l2bS9b1h83GvdBvivcUvdmzJYmW39ahJBMeH2oJgpQtuMtgSwRjo55/HkUWpslFKRNU/VJtRJmI3heAf7Vbn2/c2296I/Y/KsCoP42/Fd4P3mB5gq4robyrzwlsPUsetmGbZanDPJaEIHdzBxiGET5NTOY+I86KxHoBOvwXE/Jckp/aQUCITZb56zpHO/na15IS0jsIicGfQ/B6hb6joPQQzDFo8/NCKEVzGeq1KHTrwupcDK//f41v1Pu7hv7X9zNoNGfBck8RU4+pDAJWgsGUVoM5s/MSYdCzPjENASMp65kxKc74WJHGSfMFFhPA6NPc80QK6xaLMmRlVIxOAoz5BmgTev7Hll81Mx/3HKpHNt2Bxzre3x8aqIv9WD9OD8=
-  app: main-app
+    secure: DAo0LLHdxK+L/M35fMnC/gdlk8Tr3b7gNCe6VfTRfnN1qVGW07nMztvXw2Sn2imnnbaDOHHjMqfe3/OlVKE4M89SWZvmgXCeD4TRSl4Sdgs4b7DJDaL+EqLFF0PLF70WbljVfIP1YIkw3a4VDKyJC3IyN1PrCHfFfqx3hAeBYuofqOh/2kLErb15SU0aDtYPaPYoTGac5tov9jlpmsnbVF2/fHimozVvUVQSpFOmoWBbH26Pt7v5oaQqsumFPIA7GAW/VvgTB/ocoBNRjp+nD/rskZi2kRH7iLGk3IFVm+26AZx3pIE2cVQuS+Po63XjpSB3teC+JeDobKH1Al2BFGl30/woL5CaNTr8LAUnp9cdmDLemJ2TkGvqjPfh/XjvrxTmKpg1G4Q+2+cVy1rXb1zJj799TEuTk8w9z58Qz3ZmnQxjQ7tjr6nOydGGQ7SU18vIZ4rAdAJ/dcYqCBhhnCchpvQMqr1QSD3XTvMy8dHcXDxTKn9oZQUjiIOsN3noH3NY10oRTs0SHkG+9II3iSMTlZ6KJA/OIb/zA1K7pIDnV2KjGu096uhhX47PD1NhFIee+dDdbaLs623vWZO3lVKCau5KnI8EJYLyHDnb5R0pRr+EPRYkGgKBNIy5Qulo2HxGkQ8EFozGuMRdNI2ACK9ihU6q/gMNR3Dp1jRrvK0=
+  app: practice-hacker-main-app
   on:
     repo: Practice-Hacker/main-app
   skip_cleanup: 'true'

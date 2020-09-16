@@ -38,8 +38,8 @@ RSpec.describe 'user navbar' do
     end
 
     it "on the Piece Show page after a user is logged in" do
-      piece = Piece.create!(title: "Such a good title", subtitle: "NOPE", composer: "The bestest composer")
-      visit piece_show_path(piece.id)
+      piece = Piece.create!(title: "Such a good title", subtitle: "NOPE", composer: "The bestest composer", api_work_id: "60")
+      visit piece_show_path(piece.api_work_id)
 
       expect(page).to have_button("Search")
       expect(page).to have_link("Browse Music")

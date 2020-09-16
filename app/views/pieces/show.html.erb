@@ -1,7 +1,11 @@
 <%= render partial: "/partials/navbar" %>
 
-<h1 class="title"><%= @piece.title %>: <%= @piece.subtitle %></h1>
-<h3 class="composer">Composed by: <%= @piece.composer %></h3>
+<h1 class="title"><%= @piece.title %>
+  <% if @piece.subtitle.present? %>
+     <%= ": #{@piece.subtitle}"  %>
+  <% end %>
+</h1>
+<h2 class="composer">Composed by: <%= @piece.composer %></h2>
 <p class="average-rating">
 </p>
 <p class="tip-count">

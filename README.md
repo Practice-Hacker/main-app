@@ -2,7 +2,6 @@
 
 Travis CI: [![Build Status](https://travis-ci.com/Practice-Hacker/main-app.svg?branch=master)](https://travis-ci.com/Practice-Hacker/main-app)
 
-https://github.com/Practice-Hacker/sinatra-service/issues
 
 **Contributors:** Cameron Chery, Kwibe Merci, Taija Warbelow, Eric Hale.
 
@@ -21,6 +20,8 @@ Eric Hale: https://github.com/EHale64, https://www.linkedin.com/in/eric-hale-656
 **Project board**: https://github.com/orgs/Practice-Hacker/projects/1
 
 **Miro**: https://miro.com/app/board/o9J_klmn78E=/
+
+**Sinatra Micro Service**: https://github.com/Practice-Hacker/sinatra-service/issues
 
 **API**: https://openopus.org/
 

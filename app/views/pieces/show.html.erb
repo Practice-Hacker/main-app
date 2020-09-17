@@ -1,11 +1,13 @@
 <%= render partial: "/partials/navbar" %>
-
-<%= link_to "Add Tip", "/pieces/#{@piece.id}/tips/new", method: :get %>
-
-<h1 class="title"><%= @piece.title %>: <%= @piece.subtitle %></h1>
-<h3 class="composer">Composed by: <%= @piece.composer %></h3>
+<h1 class="title"><%= @piece.title %>
+  <% if @piece.subtitle.present? %>
+     <%= ": #{@piece.subtitle}"  %>
+  <% end %>
+</h1>
+<h2 class="composer">Composed by: <%= @piece.composer %></h2>
 <p class="average-rating">
 </p>
+<%= link_to "Add Tip", "/pieces/#{@piece.api_work_id}/tips/new", method: :get %>
 <p class="tip-count">
 </p>
 <% @piece.tips.each do |user_tip| %>

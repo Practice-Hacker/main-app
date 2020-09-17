@@ -44,13 +44,10 @@ Ruby 2.5.3
 
 Deploy with Heroku: https://medium.com/better-programming/deploy-your-app-for-free-in-7-easy-steps-thanks-to-heroku-dfd0f387edd0
 
-* System dependencies
+### Testing
 
-* Configuration
+Testing is Done through Rspec: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 

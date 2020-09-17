@@ -1,8 +1,10 @@
 class PiecesController < ApplicationController
   def show
-    @piece = Piece.find(params[:id])
-    # this needs to check if the piece is in our database
-    # if it isn't it needs to get the info from our sinatra api?
-    # make that info into a piece object to send to the view
+    @piece = Piece.find_by({api_work_id:  params[:id]})
+    if @piece.nil?
+      facade = PieceFacade.new(params[:id])
+      @piece = facade.to_piece
+      @piece.save!
+    end
   end
 end

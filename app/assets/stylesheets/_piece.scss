@@ -1,0 +1,19 @@
+.piece-title{
+  text-transform: capitalize;
+  margin-top: 4rem;
+}
+section.piece-show{
+  border: 1px solid transparentize(#2E2F30, .8);
+  padding: 2rem 1rem;
+  margin: 4rem auto;
+  .btn-piece{
+    width: 15rem;
+    border-radius: 0;
+    border: 1px solid #ced4da;
+    &:hover{
+      background-color: #343a40;
+      color: #F7F7F7;
+      transition: ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+h1.tip-header{
+  margin-top: 2rem;
+  text-transform: capitalize;
+}
+section.create-tip{
+  margin-top: 2rem;
+  form{
+    select#difficulty_rating{
+      border-radius: 0;
+    }
+  }
+}

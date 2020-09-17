@@ -1,10 +1,18 @@
 <%= render partial: "/partials/navbar" %>
-<main class="welcome-main d-flex justify-content-center">
-  <section>
-    <h1 class="welcome-main_header">Practice Hacker</h1>
-    <p class ="welcome-main_content">
-      This is a classical music app.
-    </p>
-    <%= link_to 'Login With Google', '/auth/google_oauth2', class: 'btn btn-outline-info' %>
+<main>
+  <section class="welcome-main">
+    <header class="landing page">
+      <h1 class="welcome-main_header"><span class="head">Practice</span><span class="tail">Hacker</span></h1>
+    </header>
+
+    <% if current_user.nil? %>
+      <%= link_to 'Login With Google', '/auth/google_oauth2', class: 'btn btn-info' %>
+    <% end %>
+  </section>
+
+  <section class="welcome-content">
+    <div class ="welcome-main_content">
+      <p>This is a classical music app.</p>
+    </div>
   </section>
 </main>

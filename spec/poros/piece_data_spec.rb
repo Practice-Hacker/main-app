@@ -7,11 +7,10 @@ RSpec.describe PieceData do
 
     piece = PieceData.new(result)
     expect(piece).to be_instance_of PieceData
-    expect(piece.name).to eq(result[:composer][:name])
+    expect(piece.composer).to eq(result[:composer][:name])
     expect(piece.title).to eq(result[:work][:title])
     expect(piece.subtitle).to eq(result[:work][:subtitle])
-    expect(piece.piece_id).to eq(result[:work][:id])
+    expect(piece.api_work_id).to eq(result[:work][:id])
   end
 
 end
-

@@ -4,7 +4,7 @@ RSpec.describe 'Welcome page' do
   it 'has a title and google link button' do
     visit root_path
 
-    title = 'Practice Hacker'
+    title = 'PracticeHacker'
     explanation = 'This is a classical music app'
     expect(page).to have_content(title)
     expect(page).to have_link('Login With Google')

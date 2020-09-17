@@ -18,7 +18,7 @@
 <% end %>
 
 <% if current_user.favorite_pieces.include?(@piece.id) %>
-  <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id), method: :destroy %>
+  <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id, api_work_id: @piece.api_work_id), method: :destroy %>
 <% else %>
-  <%= link_to 'Favorite', user_favorites_path(piece_id: @piece.id, user_id: current_user.id), method: :post %>
+  <%= link_to 'Favorite', user_favorites_path(piece_id: @piece.id, user_id: current_user.id, api_work_id: @piece.api_work_id), method: :post %>
 <% end %>

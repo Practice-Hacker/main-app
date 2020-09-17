@@ -1,13 +1,18 @@
-<h1 align= "center">Give people a tip!</h1>
+<%= render partial: 'partials/navbar' %>
+<h1 align= "center" class="tip-header">Give people a tip!</h1>
 
-<center>
-  <%= form_tag "/pieces/#{@piece.api_work_id}", method: :post do |f| %>
-    <%= label_tag :tip %>
-    <%= text_field_tag :tip %>
-    <br>
-    <%= label_tag :difficulty_rating %>
-    <%= select_tag :difficulty_rating, options_for_select([[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]]) %>
-    <br>
-    <%= submit_tag "Create Tip" %>
+<section class="form create-tip">
+  <%= form_tag "/pieces/#{params[:id]}", method: :post do %>
+    <div class="form-group">
+      <%= label_tag :tip %>
+      <%= text_area_tag :tip, nil, class: 'form-control', rows: 8 %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :difficulty_rating %>
+      <%= select_tag :difficulty_rating, options_for_select([1, 2, 3,  4, 5]), class: 'form-control' %>
+    </div>
+
+    <%= submit_tag 'Create Tip', class: 'btn' %>
   <% end %>
-</center>
+</section>

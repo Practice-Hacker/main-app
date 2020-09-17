@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   post '/pieces/:id', to: 'tips#create'
   get '/pieces/:id/tips/:tip_id/edit', to: 'tips#edit'
   patch 'pieces/tips/:id', to: 'tips#update'
+  delete '/pieces/tips/:id', to: 'tips#destroy'
 end

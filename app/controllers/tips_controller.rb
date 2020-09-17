@@ -25,6 +25,12 @@ class TipsController < ApplicationController
     redirect_to "/pieces/#{tip.piece_id}"
   end
 
+  def destroy
+    tip = Tip.find(params[:id])
+    tip.destroy
+    redirect_to "/pieces/#{tip.piece_id}"
+  end
+
   private
 
   def tip_params

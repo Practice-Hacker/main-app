@@ -34,7 +34,7 @@ RSpec.describe "user tips creation" do
       click_on "Create Tip"
 
       user_tip = Tip.last
-      
+
       expect(current_path).to eq("/pieces/#{@piece_id}")
       expect(user_tip.tip).to eq("Do the thing, yeah!")
       expect(user_tip.difficulty_rating).to eq(3)

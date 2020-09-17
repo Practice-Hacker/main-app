@@ -25,18 +25,22 @@ Eric Hale: https://github.com/EHale64, https://www.linkedin.com/in/eric-hale-656
 
 **API**: https://openopus.org/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-* Ruby version: 2.5.3
+### Versions
 
-* Rails version: 5.2.4.4
+Rails 5.2.4.4
+
+Ruby 2.5.3
+
+
+
+* Database creation
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+
 
 * Database initialization
 

@@ -18,7 +18,7 @@ RSpec.describe "as a user on my profile page" do
     total_tips = user.tips.size
 
     visit(user_path(user.id))
-    save_and_open_page
+
     within(".pieces-contributed-to") do
       within(".total-tips") do
         expect(page).to have_content("Overall number of tips contributed")
@@ -33,10 +33,3 @@ RSpec.describe "as a user on my profile page" do
     end
   end
 end
-
-# Story:
-# As an authenticated user,
-# When I visit the profile path,
-# I should be able to see a section on my profile page
-# that updates with pieces that I have contributed to
-# with a total count of tips per piece.

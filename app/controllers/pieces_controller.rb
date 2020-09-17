@@ -4,6 +4,7 @@ class PiecesController < ApplicationController
     if @piece.nil?
       facade = PieceFacade.new(params[:id])
       @piece = facade.to_piece
+      @piece.save!
     end
   end
 end

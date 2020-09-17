@@ -6,7 +6,9 @@ https://github.com/Practice-Hacker/sinatra-service/issues
 
 Contributors: Cameron Chery, Kwibe Merci, Taija Warbelow, Eric Hale.
 
-Links: Cameron Chery: https://github.com/ckccameron,
+**Links** 
+
+Cameron Chery: https://github.com/ckccameron,
 
 Kwibe Merci: https://github.com/jKwibe,
 

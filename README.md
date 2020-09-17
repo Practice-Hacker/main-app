@@ -32,6 +32,10 @@ Rails 5.2.4.4
 
 Ruby 2.5.3
 
+### Schema Diagram
+
+file:///Users/erichale/Downloads/Untitled.pdf
+
 ### Setup
 
 - Clone this repo

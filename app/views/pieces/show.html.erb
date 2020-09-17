@@ -12,5 +12,6 @@
   <section id="tips-<%= user_tip.id %>">
     <p>Tip Info: <%= user_tip.tip %></p>
     <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+    <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
   </section>
 <% end %>

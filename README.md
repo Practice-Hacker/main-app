@@ -1,16 +1,24 @@
 # README
 
+Travis CI: 
+
 https://github.com/Practice-Hacker/sinatra-service/issues
 
-https://github.com/ckccameron: Cameron Chery
+Contributors: Cameron Chery, Kwibe Merci, Taija Warbelow, Eric Hale.
 
-https://github.com/jKwibe: Kwibe Merci
+Links: Cameron Chery: https://github.com/ckccameron,
 
-https://github.com/twarbelow: Taija Warbelow
+Kwibe Merci: https://github.com/jKwibe,
 
-https://github.com/EHale64: Eric Hale
+Taija Warbelow: https://github.com/twarbelow, 
 
-https://github.com/orgs/Practice-Hacker/projects/1
+Eric Hale: https://github.com/EHale64
+
+
+
+Project board: https://github.com/orgs/Practice-Hacker/projects/1
+
+Miro: https://miro.com/app/board/o9J_klmn78E=/
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

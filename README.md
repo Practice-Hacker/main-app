@@ -34,7 +34,7 @@ Ruby 2.5.3
 
 ### Schema Diagram
 
-![Schema](https://imgur.com/fX1y4Ze)
+![Schema](https://imgur.com/a/q0ZPjiH)
 
 ### Setup
 

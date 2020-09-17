@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   get '/pieces/:id/tips/new', to: 'tips#new'
   post '/pieces/:id', to: 'tips#create'
+  
+  delete '/piece/tips/:id', to: 'tips#destroy'
 
 end

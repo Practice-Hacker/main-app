@@ -24,6 +24,7 @@
         <section id="tips-<%= user_tip.id %>">
           <p>Tip Info: <%= user_tip.tip %></p>
           <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+          <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
         </section>
       <% end %>
 
@@ -34,17 +35,13 @@
 <p class="tip-count">
 </p>
 <% @piece.tips.each do |user_tip| %>
-  <section id="tips-<%= user_tip.id %>">
-    <p>Tip Info: <%= user_tip.tip %></p>
-    <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
-    <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
-      <% if current_user %>
-        <% if current_user.piece_ids.include?(@piece.id) %>
-          <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id), method: :delete, class: 'btn btn-piece'%>
-        <% else %>
-          <%= link_to 'Favorite', user_favorites_path(piece_id: @piece.id, user_id: current_user.id, api_work_id: @piece.api_work_id), method: :post, class: 'btn btn-piece'%>
-        <% end %>
+    <% if current_user %>
+      <% if current_user.piece_ids.include?(@piece.id) %>
+        <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id), method: :delete, class: 'btn btn-piece'%>
+      <% else %>
+        <%= link_to 'Favorite', user_favorites_path(piece_id: @piece.id, user_id: current_user.id, api_work_id: @piece.api_work_id), method: :post, class: 'btn btn-piece'%>
       <% end %>
+    <% end %>
     </div>
   </section>
 </section>

@@ -1,7 +1,7 @@
 <h1 align= "center">Give people a tip!</h1>
 
 <center>
-  <%= form_tag "/pieces/#{@piece.id}", method: :post do |f| %>
+  <%= form_tag "/pieces/#{@piece.api_work_id}", method: :post do |f| %>
     <%= label_tag :tip %>
     <%= text_field_tag :tip %>
     <br>

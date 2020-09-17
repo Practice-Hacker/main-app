@@ -5,12 +5,12 @@ section.username{
   justify-content: center;
   display: flex;
   margin-top: 8rem;
+  margin-bottom: 4rem;
   h1.header{
     text-transform: capitalize;
     position: absolute;
-    background-color: transparentize($background_color, .3) ;
+    background-color: transparentize(#dadada, .2);
     padding: 5px 10px;
-    //margin-top: -26px;
     margin-top: -1.6rem;
   }
   form.edit-user{

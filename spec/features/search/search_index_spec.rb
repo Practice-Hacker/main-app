@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Search Index' do
   before(:each) do
     # stub a logged in user
-    user = User.create({ username: 'Tony Stark', uid: '123456' })
+    user = User.create!({ username: 'Tony Stark', uid: '123456', access_token: 'token', email: 'test@test.com' })
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
   end
@@ -14,7 +14,7 @@ RSpec.describe 'Search Index' do
 
     visit root_path
 
-    within 'navbar' do
+    within '.navbar' do
       fill_in :q, with: 'violin'
       click_button 'Search'
     end
@@ -38,7 +38,7 @@ RSpec.describe 'Search Index' do
 
     visit root_path
 
-    within 'navbar' do
+    within '.navbar' do
       fill_in :q, with: 'qwerrewer'
       click_button 'Search'
     end

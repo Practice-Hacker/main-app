@@ -16,13 +16,4 @@ RSpec.describe "piece show page" do
     expect(page).to have_content(parsed_data[:work][:title])
     expect(page).to have_content(parsed_data[:composer][:name])
   end
-
-  it "should have a button to favorite and unfavorite a piece" do
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
-    parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
-    piece_id = parsed_data[:work][:id]
-    visit piece_show_path(piece_id)
-
-    expect(page).to have_link('Favorite')
-  end
 end

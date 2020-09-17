@@ -14,9 +14,14 @@ class UserFavoritesController < ApplicationController
   end
 
   def destroy
+    session[:return_to] ||= request.referer
     favorite = FavoritePiece.find_by(piece_id: params[:piece_id], user_id: params[:user_id])
+    if favorite.nil?
+      favorite = FavoritePiece.find_by(id: params[:id])
+    end
     favorite.destroy
     flash[:success] = "This piece has been removed from your favorites."
-    redirect_to piece_show_path(params[:id])
+    redirect_to session.delete(:return_to)
+    # redirect_to piece_show_path(params[:id])
   end
 end

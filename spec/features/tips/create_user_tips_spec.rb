@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "user tips CRUD functionality" do
+RSpec.describe "user tips creation" do
   before :each do
-    @user = User.create!(username:"Tony Stark" ,uid: "12345678" ,access_token: "token" ,email: "tony@stark.com")
+    @user = User.create!(username: "Bruce Banner" ,uid: "12345678" ,access_token: "token" ,email: "tony@stark.com")
     @piece = Piece.create!(title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer")
     visit root_path
     click_on "Log In"

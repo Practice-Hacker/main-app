@@ -4,7 +4,7 @@ Travis CI:
 
 https://github.com/Practice-Hacker/sinatra-service/issues
 
-Contributors: Cameron Chery, Kwibe Merci, Taija Warbelow, Eric Hale.
+**Contributors:** Cameron Chery, Kwibe Merci, Taija Warbelow, Eric Hale.
 
 **Links** 
 

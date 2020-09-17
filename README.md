@@ -32,6 +32,25 @@ Rails 5.2.4.4
 
 Ruby 2.5.3
 
+### Required Gems
+
+* faraday
+
+* figaro
+
+* bootstrap-multiselect-rails
+
+#### Testing Gems
+
+* factory bot
+
+* faker
+
+* simplecov
+
+* travis
+
+
 ### Schema Diagram
 
 ![Schema](https://i.imgur.com/fX1y4Ze.png)

@@ -13,18 +13,10 @@ class UserFavoritesController < ApplicationController
   def index
   end
 
-  def delete
+  def destroy
+    favorite = FavoritePiece.find_by(piece_id: params[:piece_id], user_id: params[:user_id])
+    favorite.destroy
     flash[:success] = "This piece has been removed from your favorites."
+    redirect_to piece_show_path(params[:id])
   end
 end
-#
-# def create
-#   friend = User.find_by(email: params[:email_id])
-#   if friend
-#     current_user.add_friend(friend)
-#     flash[:notice] = "#{friend.first_name} has been added as your friend"
-#   else
-#     flash[:alert] = 'There is no user with that email address'
-#   end
-#   redirect_to root_path
-# end

@@ -11,10 +11,12 @@ RSpec.describe "as a user on a piece show page" do
 
     visit piece_show_path(piece_id)
     click_link "Favorite"
-    expect(current_path).to eq("piece_show_path(piece_id)")
+    expect(current_path).to eq("/pieces/#{piece_id}")
+    expect(page).to have_content("This piece has been added to your favorites.")
     expect(page).to have_link("Remove Favorite")
     click_link "Remove Favorite"
-    expect(current_path).to eq("piece_show_path(piece_id)")
+    expect(current_path).to eq("/pieces/#{piece_id}")
+    expect(page).to have_content("This piece has been removed from your favorites.")
     expect(page).to have_link("Favorite")
   end
 end

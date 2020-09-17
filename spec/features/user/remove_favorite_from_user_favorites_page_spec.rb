@@ -16,9 +16,11 @@ RSpec.describe "as a user on my favorites page" do
       expect(page).to have_link("Remove from Favorites")
       click_link("Remove from Favorites")
     end
+    
+    expect(page).to have_content("This piece has been removed from your favorites.")
 
     user.reload
-    
+
     visit(user_favorites_path)
     expect(page).to_not have_content(piece.title)
   end

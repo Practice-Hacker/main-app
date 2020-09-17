@@ -1,0 +1,13 @@
+<h1 align= "center">Update your tip!</h1>
+
+<center>
+  <%= form_tag "/pieces/tips/#{@tip.id}", method: :patch do |f| %>
+    <%= label_tag :tip %>
+    <%= text_field_tag :tip, "#{@tip.tip}" %>
+    <br>
+    <%= label_tag :difficulty_rating %>
+    <%= select_tag :difficulty_rating, options_for_select([[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]]) %>
+    <br>
+    <%= submit_tag "Update Tip" %>
+  <% end %>
+</center>

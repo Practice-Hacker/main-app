@@ -1,8 +1,37 @@
+body{
+  background-color: transparentize(#dadada, .2);
+  font-family: $text_font_family;
+}
 main{
-  section{
-    text-align: center;
-    h1{
-      text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  section.welcome-main{
+    padding: 13rem 0;
+    background-image: url("https://f000.backblazeb2.com/file/PracticeHacker/arindam-mahanta-VEOk8qUl9DU-unsplash.jpg");
+    background-position: center bottom;
+    header{
+      h1.welcome-main_header{
+        text-transform: uppercase;
+        color: #F7F7F7 !important;
+        padding-bottom: 2rem;
+        span.tail{
+          background-color: black;
+          padding: 3rem 1rem;
+        }
+        span.head{
+          background-color: #ffffff;
+          padding: 3rem 1rem;
+          color: black;
+        }
+      }
     }
+    a.btn.btn-info{
+      margin-top: 3rem;
+    }
+  }
+  section.welcome-content{
+    padding: 5rem;
   }
 }

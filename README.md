@@ -32,17 +32,21 @@ Rails 5.2.4.4
 
 Ruby 2.5.3
 
+### Setup
 
+- Clone this repo
+- `bundle install`
+- `bundle exec figaro install`
+- `rails db:{create,migrate}`
+- `rails s`
 
-* Database creation
+### Deployment
+
+Deploy with Heroku: https://medium.com/better-programming/deploy-your-app-for-free-in-7-easy-steps-thanks-to-heroku-dfd0f387edd0
 
 * System dependencies
 
 * Configuration
-
-
-
-* Database initialization
 
 * How to run the test suite
 
@@ -50,4 +54,3 @@ Ruby 2.5.3
 
 * Deployment instructions
 
-* ...

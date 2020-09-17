@@ -1,19 +1,25 @@
 <%= render partial: "/partials/navbar" %>
-<section class='pieces'>
+<section class="header fav">
+  <h3 class="header-title" align="center">My Favorite pieces</h3>
+</section>
+<section class='pieces fav'>
 <% current_user.favorite_pieces.each do |favorite_piece| %>
-  <section id="piece-<%= favorite_piece.id %>">
-    <%= link_to 'Remove from Favorites', user_favorite_path(piece_id: favorite_piece.id, user_id: current_user.id, id: favorite_piece.id), method: :delete %>
-    <section class='title'>
-      <%= link_to favorite_piece.piece.title, piece_path(favorite_piece.piece.id) %>
-    </section>
+  <section class="piece-item" id="piece-<%= favorite_piece.id %>">
+    <div>
+      <section class='title'>
+        <%= link_to favorite_piece.piece.title, piece_show_path(favorite_piece.piece.id) %>
+      </section>
 
-    <section class='composer'>
-      <%= favorite_piece.piece.composer %>
-    </section>
+      <section class='composer'>
+        <%= favorite_piece.piece.composer %>
+      </section>
 
-    <section class='contributions'>
+      <section class='contributions'>
 
-    </section>
+      </section>
+    </div>
+    <%= link_to 'Remove from Favorites', user_favorite_path(piece_id: favorite_piece.id, user_id: current_user.id, id: favorite_piece.id), method: :delete , class: 'btn btn-piece'%>
   </section>
+    <hr>
 <% end %>
 </section>

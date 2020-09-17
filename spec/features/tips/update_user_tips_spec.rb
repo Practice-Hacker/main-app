@@ -31,7 +31,7 @@ RSpec.describe "user tips updating" do
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
-    piece = Piece.create!(title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "#{piece_id}")
+    piece = Piece.create!(id: piece_id, title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "#{piece_id}")
 
     visit root_path
     click_on "Log In"
@@ -64,7 +64,7 @@ RSpec.describe "user tips updating" do
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
-    piece = Piece.create!(title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "28072")
+    piece = Piece.create!(id: piece_id, title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "28072")
 
     visit root_path
     click_on "Log In"

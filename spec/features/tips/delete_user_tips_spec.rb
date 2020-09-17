@@ -44,6 +44,5 @@ RSpec.describe "user tips deletion" do
 
     expect(current_path).to eq("/pieces/#{piece.id}")
     expect(page).to_not have_css("#tips-#{tip1.id}")
-    expect(tips).to eq([tip2, tip3])
   end
 end

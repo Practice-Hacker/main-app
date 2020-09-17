@@ -33,7 +33,6 @@ RSpec.describe "user tips CRUD functionality" do
       select 3, from: :difficulty_rating
       click_on "Create Tip"
       user_tip = Tip.last
-      save_and_open_page
       expect(current_path).to eq("/pieces/#{@piece_id}")
       expect(user_tip.tip).to eq("Do the thing, yeah!")
       expect(user_tip.difficulty_rating).to eq(3)

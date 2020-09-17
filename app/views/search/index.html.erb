@@ -1,4 +1,7 @@
-<h1>Search Results</h1>
+<%= render partial: "/partials/navbar" %>
+<div class="search-header">
+  <h1>Search Results</h1>
+</div>
 <% if @pieces.empty? %>
   <section class="">
     <p> We are sorry! We currently have no results for your query </p>
@@ -6,25 +9,27 @@
   <% else %>
 
 <section class="pieces">
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Piece Title</th>
-      <th scope="col">Subtitle</th>
-      <th scope="col">Composer Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @pieces.each do |piece| %>
-      <% if piece.title %>
-        <tr class="piece" id = <%= piece.api_work_id %>>
-          <td ><%= link_to piece.title, piece_show_path(piece.api_work_id) %></td>
-          <td><%= piece.subtitle %></td>
-          <td><%= piece.composer %></td>
-        </tr>
+  <div class = "pieces-table">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Piece Title</th>
+        <th scope="col">Subtitle</th>
+        <th scope="col">Composer Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @pieces.each do |piece| %>
+        <% if piece.title %>
+          <tr class="piece" id = <%= piece.api_work_id %>>
+            <td ><%= link_to piece.title, piece_show_path(piece.api_work_id) %></td>
+            <td><%= piece.subtitle %></td>
+            <td><%= piece.composer %></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </section>
 <% end %>

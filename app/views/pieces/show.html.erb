@@ -34,8 +34,7 @@
 </p>
 <p class="tip-count">
 </p>
-<% @piece.tips.each do |user_tip| %>
-    <% if current_user %>
+  <% if current_user %>
       <% if current_user.piece_ids.include?(@piece.id) %>
         <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id), method: :delete, class: 'btn btn-piece'%>
       <% else %>
@@ -45,4 +44,3 @@
     </div>
   </section>
 </section>
-<% end %>

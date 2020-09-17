@@ -6,7 +6,7 @@
     <%= text_field_tag :tip, "#{@tip.tip}" %>
     <br>
     <%= label_tag :difficulty_rating %>
-    <%= select_tag :difficulty_rating, options_for_select([[1, 1],[2, 2],[3, 3],[4, 4],[5, 5]]) %>
+    <%= select_tag :difficulty_rating, options_for_select([1, 2, 3, 4, 5]) %>
     <br>
     <%= submit_tag "Update Tip" %>
   <% end %>

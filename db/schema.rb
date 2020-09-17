@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_170041) do
     t.string "composer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "api_work_id"
   end
 
   create_table "skills", force: :cascade do |t|

@@ -1,6 +1,33 @@
 <%= render partial: "/partials/navbar" %>
+<h1 class="title piece-title" align="center"><%= @piece.title %>
+  <% if @piece.subtitle.present? %>
+    <%= ": #{@piece.subtitle}"  %>
+  <% end %>
+</h1>
+<section class="container piece-show">
+  <section class="row">
+    <div class="col-4">
+      <figure class="figure">
+        <img src='https://f000.backblazeb2.com/file/PracticeHacker/josep-molina-secall-yO4XF2uC4g0-unsplash.jpg' class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+        <figcaption class="figure-caption">composed by: <%= @piece.composer %> .</figcaption>
+      </figure>
+    </div>
 
-<%= link_to "Add Tip", "/pieces/#{@piece.id}/tips/new", method: :get %>
+    <div class="col-8">
+      <h2 class="composer">Composed by: <%= @piece.composer %></h2>
+      <p class="average-rating">
+      </p>
+      <%= link_to "Add Tip", "/pieces/#{@piece.api_work_id}/tips/new", class: 'btn btn-piece'%>
+      <p class="tip-count">
+      </p>
+      <% @piece.tips.each do |user_tip| %>
+        <section id="tips-<%= user_tip.id %>">
+          <p>Tip Info: <%= user_tip.tip %></p>
+          <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+          <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
+          <p><%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete %></p>
+        </section>
+      <% end %>
 
 <h1 class="title"><%= @piece.title %>: <%= @piece.subtitle %></h1>
 <h3 class="composer">Composed by: <%= @piece.composer %></h3>
@@ -8,11 +35,13 @@
 </p>
 <p class="tip-count">
 </p>
-<% @piece.tips.each do |user_tip| %>
-  <section id="tips-<%= user_tip.id %>">
-    <p>Tip Info: <%= user_tip.tip %></p>
-    <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
-    <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
-    <p><%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete %></p>
+  <% if current_user %>
+      <% if current_user.piece_ids.include?(@piece.id) %>
+        <%= link_to 'Remove Favorite', user_favorite_path(piece_id: @piece.id, user_id: current_user.id), method: :delete, class: 'btn btn-piece'%>
+      <% else %>
+        <%= link_to 'Favorite', user_favorites_path(piece_id: @piece.id, user_id: current_user.id, api_work_id: @piece.api_work_id), method: :post, class: 'btn btn-piece'%>
+      <% end %>
+    <% end %>
+    </div>
   </section>
-<% end %>
+</section>

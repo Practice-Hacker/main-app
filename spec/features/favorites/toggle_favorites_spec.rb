@@ -6,7 +6,7 @@ RSpec.describe "as a user on a piece show page" do
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
-    Piece.create!(title: "Such a good title", subtitle: "no subtitle here", composer: "The bestest composer", api_work_id: "#{piece_id}")
+    Piece.create!(id: piece_id, title: "Such a good title", subtitle: "no subtitle here", composer: "The bestest composer", api_work_id: "#{piece_id}")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit piece_show_path(piece_id)
@@ -20,7 +20,7 @@ RSpec.describe "as a user on a piece show page" do
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
-    piece = Piece.create!(title: "Such a good title", subtitle: "no subtitle here", composer: "The bestest composer", api_work_id: "#{piece_id}")
+    piece = Piece.create!(id: piece_id, title: "Such a good title", subtitle: "no subtitle here", composer: "The bestest composer", api_work_id: "#{piece_id}")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     user.favorite_pieces.create!(user_id: user.id, piece_id: piece.id)
     user.save!

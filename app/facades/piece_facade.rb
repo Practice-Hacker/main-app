@@ -8,6 +8,7 @@ class PieceFacade
     p.title = @data[:work][:title]
     p.subtitle = @data[:work][:subtitle]
     p.composer = @data[:composer][:name]
+    p.id = @data[:work][:id]
     p.api_work_id = @data[:work][:id]
     p
   end

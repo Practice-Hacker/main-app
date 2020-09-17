@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "user tips CRUD functionality" do
+RSpec.describe "user tips creation" do
   before :each do
     @user = User.create!(username:"Tony Stark" ,uid: "12345678" ,access_token: "token" ,email: "tony@stark.com")
     @data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}piece/28072").to_return(status: 200, body: File.read('spec/data/piece_data.json'))
@@ -32,7 +32,9 @@ RSpec.describe "user tips CRUD functionality" do
       fill_in :tip, with: "Do the thing, yeah!"
       select 3, from: :difficulty_rating
       click_on "Create Tip"
+
       user_tip = Tip.last
+      
       expect(current_path).to eq("/pieces/#{@piece_id}")
       expect(user_tip.tip).to eq("Do the thing, yeah!")
       expect(user_tip.difficulty_rating).to eq(3)

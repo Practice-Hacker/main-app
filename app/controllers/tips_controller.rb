@@ -14,4 +14,20 @@ class TipsController < ApplicationController
       redirect_to "/pieces/#{params[:id]}/tips/new"
     end
   end
+
+  def edit
+    @tip = Tip.find(params[:tip_id])
+  end
+
+  def update
+    tip = Tip.find(params[:id])
+    tip.update(tip_params)
+    redirect_to "/pieces/#{tip.piece_id}"
+  end
+
+  private
+
+  def tip_params
+    params.permit(:tip, :difficulty_rating)
+  end
 end

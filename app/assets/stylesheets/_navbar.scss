@@ -1,6 +1,19 @@
 nav{
   padding-left: 7rem !important;
   padding-right: 7rem !important;
+  ul.navbar-nav{
+    li.nav-item{
+      a{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #F7F7F7 !important;
+        font-size: 0.9rem !important;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
   form.form-inline{
     input[type=search]#q{
       width: 17rem;
@@ -12,6 +25,8 @@ nav{
       border-radius: 0;
       margin-left: -9px;
       border-left: 0;
+      background-color: #495057;
+      color: #F7F7F7;
     }
   }
 }

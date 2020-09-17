@@ -23,3 +23,11 @@ RSpec.describe "user tips updating" do
       end
     end
   end
+
+  it "allows user to update tip by editing all fields" do
+
+  end
+
+  it "allows user to update tip without having to edit all fields" do
+    
+  end

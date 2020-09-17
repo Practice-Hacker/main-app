@@ -18,9 +18,9 @@ Eric Hale: https://github.com/EHale64
 
 
 
-Project board: https://github.com/orgs/Practice-Hacker/projects/1
+**Project board**: https://github.com/orgs/Practice-Hacker/projects/1
 
-Miro: https://miro.com/app/board/o9J_klmn78E=/
+**Miro**: https://miro.com/app/board/o9J_klmn78E=/
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

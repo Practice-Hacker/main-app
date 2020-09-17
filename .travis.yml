@@ -10,12 +10,3 @@ script:
 - bundle exec rails db:{drop,create,migrate,seed} RAILS_ENV=test
 - bundle exec rspec
 running: rspec
-deploy:
-  provider: heroku
-  api_key:
-    secure: fTHckGGieTKVqKMB3prc2eFA6gTWagYyf28CF0LEKDuEhDcgs5viTSp920D7RYrZgpfYfmpNqI0RuhPPqzgv/9I8bkrlcW3ybJXd213vqodtX1lMh+vDK1FPMYMV6S6e79cbozsEiS9yJatBIEq4z7V/9r40cE0E3x09UBJBmNJSwJRlx+XJqNOmd+n6ZdCJGZLgqi2J5seM8I6/n3Hgz1PL+65MzURnodeQjP+4O0ITJpHdq8BBTT4hmFUFPVULSognJ8+hfgunRCgPDpjqOFAPSJP8d2G4dJBi6T4k6AHV/2AyyDzCd4erQnNjzajY4BBrNSuf8i6VGVjwa9H0HApYxJYjugFhZRqOZoM0igJJYUsLlPjd2y4Ln9MfoQoRBOaLhcACUs+Y+iNwjTr2pJlrKAg5tUwaIdgJgwibbinbzjsMmTXnmFWSINZ6AcYl69hkCDjgJ54TJ9zWvn911VTDO7kxOzu4rXu6S6sYWaVXyTUC6mEgfIVRqgBCEO/wkwZrhs1spdnlhXfi74uPanqz/tpAdbNTUL75SeGeZmxKGJcIgOYtfIJCzfXfUNrBEdCABRIEy41Ty0bV4YEaXVx437o8qDgOaDxN6f7uX7nJ5FIPeu85PElgm4/WWiQbZVJg9pZqd87FAAMuSXTfGxjl3E95adQIOQo7i8LAQow=
-  app: practice-hacker-main-app
-  on:
-    repo: Practice-Hacker/main-app
-    branch: master
-  skip_cleanup: 'true'

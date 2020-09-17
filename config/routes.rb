@@ -11,12 +11,14 @@ Rails.application.routes.draw do
 
   resources :search, only: [:index]
 
-  resources :user_favorites, only: [:index]
+  resources :user_favorites, only: [:create, :index, :destroy]
 
   resources :piece, only: [:show]
   resources :pieces, only: [:show], as: :piece_show
 
   get '/pieces/:id/tips/new', to: 'tips#new'
   post '/pieces/:id', to: 'tips#create'
+
+
 
 end

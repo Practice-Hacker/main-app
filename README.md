@@ -1,6 +1,6 @@
 # README
 
-Travis CI: 
+Travis CI: [![Build Status](https://travis-ci.com/Practice-Hacker/main-app.svg?branch=master)](https://travis-ci.com/Practice-Hacker/main-app)
 
 https://github.com/Practice-Hacker/sinatra-service/issues
 
@@ -8,13 +8,13 @@ https://github.com/Practice-Hacker/sinatra-service/issues
 
 **Links** 
 
-Cameron Chery: https://github.com/ckccameron,
+Cameron Chery: https://github.com/ckccameron, https://www.linkedin.com/in/cameronchery/
 
-Kwibe Merci: https://github.com/jKwibe,
+Kwibe Merci: https://github.com/jKwibe, https://www.linkedin.com/in/kwibe-merci-23696278/
 
-Taija Warbelow: https://github.com/twarbelow, 
+Taija Warbelow: https://github.com/twarbelow, https://www.linkedin.com/in/taija-warbelow-2257628a/
 
-Eric Hale: https://github.com/EHale64
+Eric Hale: https://github.com/EHale64, https://www.linkedin.com/in/eric-hale-656843155/
 
 
 

@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates_presence_of :uid, :access_token, :email
 
   has_many :tips
+  has_many :tipped_pieces, class_name: "Piece", through: :tips, source: :piece
   has_many :skills
   has_many :favorite_pieces
   has_many :pieces, through: :favorite_pieces

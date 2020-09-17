@@ -1,0 +1,47 @@
+
+
+section.username{
+  position: relative;
+  justify-content: center;
+  display: flex;
+  margin-top: 8rem;
+  h1.header{
+    text-transform: capitalize;
+    position: absolute;
+    background-color: transparentize($background_color, .3) ;
+    padding: 5px 10px;
+    //margin-top: -26px;
+    margin-top: -1.6rem;
+  }
+  form.edit-user{
+    width: 40rem;
+    background-color: #F7F7F7;
+    padding: 5rem 5rem;
+
+    input[type=text], textarea{
+      border-radius: 0;
+    }
+    button[type=button].multiselect{
+      width: 15rem;
+      border-radius: 0;
+      border: 1px solid #ced4da;
+    }
+    ul.multiselect-container{
+      width: 15rem;
+      border-radius: 0;
+      li a{
+        color: #495057;
+      }
+
+    }
+    input[type=submit]{
+      border-radius: 0;
+      border: 1px solid #ced4da;
+      &:hover{
+        background-color: #343a40;
+        color: #F7F7F7;
+        transition: ease-in-out;
+      }
+    }
+  }
+}

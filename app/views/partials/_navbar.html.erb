@@ -41,8 +41,7 @@
     <% end %>
     <%= form_tag '/search', method: :get, class: 'form-inline my-2 my-lg-0' do %>
       <%= text_field_tag :q, nil, placeholder: 'Search Music', class: 'form-control mr-sm-2', type: 'search' %>
-      <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
-<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+      <%= submit_tag "Search", class: 'btn my-2 my-sm-0' %>
     <% end %>
   </div>
 </nav>

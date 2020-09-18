@@ -54,7 +54,7 @@ RSpec.describe "user tips updating" do
 
     within "#tips-#{tip1.id}" do
       expect(page).to have_content("Tip Info: New tip about classical music")
-      expect(page).to have_content("Difficulty Rating: 3/5")
+      expect(page).to have_content("Difficulty Rating (1: Pretty Easy, 5: Highly difficult): 3/5")
     end
   end
 
@@ -86,7 +86,7 @@ RSpec.describe "user tips updating" do
 
     within "#tips-#{tip1.id}" do
       expect(page).to have_content("Tip Info: Something about classical music")
-      expect(page).to have_content("Difficulty Rating: 3/5")
+      expect(page).to have_content("Difficulty Rating (1: Pretty Easy, 5: Highly difficult): 3/5")
     end
   end
 end

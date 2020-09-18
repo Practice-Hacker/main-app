@@ -41,7 +41,7 @@ RSpec.describe "user tips creation" do
 
       within "#tips-#{user_tip.id}" do
         expect(page).to have_content("Tip Info: Do the thing, yeah!")
-        expect(page).to have_content("Difficulty Rating: 3/5")
+        expect(page).to have_content("Difficulty Rating (1: Pretty Easy, 5: Highly difficult): 3/5")
       end
     end
 

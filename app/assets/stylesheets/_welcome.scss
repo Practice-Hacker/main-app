@@ -8,27 +8,22 @@ main{
   justify-content: center;
   text-align: center;
   section.welcome-main{
-    padding: 13rem 0;
+    padding: 6rem 0;
     background-image: url("https://f000.backblazeb2.com/file/PracticeHacker/arindam-mahanta-VEOk8qUl9DU-unsplash.jpg");
     background-position: center bottom;
     header{
-      h1.welcome-main_header{
-        text-transform: uppercase;
-        color: #F7F7F7 !important;
-        padding-bottom: 2rem;
-        span.tail{
-          background-color: black;
-          padding: 3rem 1rem;
-        }
-        span.head{
-          background-color: #ffffff;
-          padding: 3rem 1rem;
-          color: black;
-        }
+      img.landing-logo{
+        width: 25vw;
+        background: transparentize(#F7F7F7, .1);
       }
     }
-    a.btn.btn-info{
-      margin-top: 3rem;
+    .landing-page_content{
+      width: 40vw;
+      margin: 2rem auto 0;
+      background:transparentize(#F7F7F7, .1);
+      padding: 2rem;
+      line-height: 2rem;
+      font-size: 1.2rem;
     }
   }
   section.welcome-content{

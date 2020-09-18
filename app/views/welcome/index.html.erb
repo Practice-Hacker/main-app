@@ -1,18 +1,18 @@
 <%= render partial: "/partials/navbar" %>
 <main>
   <section class="welcome-main">
-    <header class="landing page">
-      <h1 class="welcome-main_header"><span class="head">Practice</span><span class="tail">Hacker</span></h1>
+    <header class="landing-page">
+      <img class="landing-logo" src="https://f000.backblazeb2.com/file/PracticeHacker/phtext_purple.png">
     </header>
 
-    <% if current_user.nil? %>
-      <%= link_to 'Login With Google', '/auth/google_oauth2', class: 'btn btn-info' %>
-    <% end %>
-  </section>
-
-  <section class="welcome-content">
-    <div class ="welcome-main_content">
-      <p>This is a classical music app.</p>
+    <div class="landing-page_content">
+      <p>
+        Hack your practice routine with Practice Hacker!
+        Search for the piece you are working on, and browse through user contributed tips for each piece.
+        Our users are able to share their experience and knowledge by offering advice on mastering parts they found difficult.
+        You can share anything from etudes to practice to different fingerings to try.
+        Whatever worked for you might be able to help someone else!
+      </p>
     </div>
   </section>
 </main>

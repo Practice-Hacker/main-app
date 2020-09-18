@@ -2,12 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "As a new user" do
   it "can log in using the Oauth" do
-    visit root_path
-
-    expect(page).to have_link('Login With Google')
-
-    click_link('Login With Google')
-    expect(current_path).to eq(edit_user_path(User.last.id))
+    user = User.create!(username:"Super Student" ,uid: "12345678" ,access_token: "token" ,email: "violinioso@musician.net")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit edit_user_path(user.id)
 
     expect(page).to have_content('Edit your profile')
 
@@ -17,11 +14,9 @@ RSpec.describe "As a new user" do
   end
 
   it "can edit a new user from the login" do
-    visit root_path
-
-    expect(page).to have_link('Login With Google')
-
-    click_link('Login With Google')
+    user = User.create!(username:"Super Student" ,uid: "12345678" ,access_token: "token" ,email: "violinioso@musician.net")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit edit_user_path(user.id)
 
     fill_in('Username', with: 'Bruce Banner')
     fill_in('About me', with: 'Hey all, I am trying to learn to play some classical tunes as a form of stress relief')

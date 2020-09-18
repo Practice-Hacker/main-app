@@ -33,7 +33,7 @@
 
       </tbody>
     </table>
-    <%= link_to "Load More", search_path(q: @query, offset: @offset + 20) %>
+    <%= link_to "Load More", search_index_path(q: @query, offset: @offset + 20) %>
   </div>
 </section>
 <% end %>

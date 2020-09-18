@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def update
     if params[:role].nil?
-      flash[:notice] = "You must select a role"
+      flash[:notice] = 'You must select a role'
       return render :edit
     end
     if @user.update(user_params(params[:username], params[:role], params[:about_me]))
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def user_params(username, role, about)
-    roles = role.join(" ")
-    {username: username, role: roles, about_me: about}
+    roles = role.join(' / ')
+    { username: username, role: roles, about_me: about }
   end
 end

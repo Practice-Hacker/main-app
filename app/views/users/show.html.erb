@@ -1,35 +1,45 @@
 <%= render partial: "/partials/navbar" %>
-
-<%= link_to "Edit Profile", edit_user_path, method: :get %>
-
-<h1>Welcome <%= current_user.username %></h1>
-
-<section class="user-roles">
-
+<section class="header user">
+  <h3>Welcome <%= current_user.username %></h3>
+  <section class="user-roles">
+    <p><%= current_user.role %></p>
+  </section>
 </section>
 
-<section class="about-me">
+<section class="about-me row">
+  <div class="about-me-content col">
+    <h3>About Me</h3>
+    <p><%= current_user.about_me %></p>
+  </div>
+  <% if current_user.skills.size > 0 %>
+    <section class="my-skills col">
+      <h3>My Skills</h3>
+      <ul>
+        <% current_user.skills.each do |user_skill| %>
+          <li><%= user_skill.skill %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% else %>
+    <section class='my-skills'>
+      <p>You have not added any skills</p>
+    </section>
+  <% end %>
 
 </section>
+<div class="user-edit_btn">
+<%= link_to "Edit Profile", edit_user_path, class: 'btn btn-edit' %>
+</div>
 
-<% if current_user.skills.size > 0 %>
-<section class="my-skills">
-  <h3>My Skills:</h3>
-  <ul>
-    <% current_user.skills.each do |user_skill| %>
-    <li><%= user_skill.skill %></li>
-    <% end %>
-  </ul>
-</section>
-<% else %>
- <section class='my-skills'>
-  <p>You have not added any skills</p>
- </section>
-<% end %>
+
+
+
+
+
 <section class="pieces-contributed-to">
-  <tr class="total-tips">Overall number of tips contributed: <%= current_user.tips.size %></tr>
+  <h3 class="total-tips">Overall number of tips contributed: <%= current_user.tips.size %></h3>
   <% current_user.tipped_pieces.distinct.each do |tipped_piece| %>
-    <section id="contribution-<%= tipped_piece.id %>"
+    <section id="contribution-<%= tipped_piece.id %>">
       <p class="title">
         <%= link_to tipped_piece.title, piece_show_path(tipped_piece.api_work_id) %>
         <% if tipped_piece.subtitle.present? %>
@@ -44,5 +54,6 @@
         <%= current_user.tips.where(piece_id: tipped_piece.id).count %>
       </p>
     </section>
+    <hr>
   <% end %>
 </section>

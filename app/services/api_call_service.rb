@@ -1,6 +1,6 @@
 class ApiCallService
-  def parsed_search(query)
-    JSON.parse(get_search(query).body, symbolize_names: true)
+  def parsed_search(query, offset)
+    JSON.parse(get_search(query, offset).body, symbolize_names: true)
   end
 
   def get_by_work_id(api_work_id)
@@ -13,9 +13,10 @@ class ApiCallService
     conn.get("piece/#{api_work_id}")
   end
 
-  def get_search(query)
+  def get_search(query, offset)
     conn.get('search') do |f|
       f.params[:q] = query
+      f.params[:offset] = offset
     end
   end
 

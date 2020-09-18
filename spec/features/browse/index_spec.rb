@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Browse" do
   it "takes you to a browse page with a choice of orchestral instruments" do
-    visit(browse_path)
+    visit browse_index_path
     expect(current_path).to eq("/browse")
     expect(page).to have_link("Violin")
     expect(page).to have_link("Viola")
@@ -39,7 +39,7 @@ RSpec.describe "Browse" do
     data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
-    visit browse_path
+    visit browse_index_path
     click_link("Violin")
     expect(current_path).to eq("/search")
 

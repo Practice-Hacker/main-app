@@ -31,7 +31,7 @@
   <% current_user.tipped_pieces.distinct.each do |tipped_piece| %>
     <section id="contribution-<%= tipped_piece.id %>"
       <p class="title">
-        <%= link_to tipped_piece.title, piece_show_path(tipped_piece.id) %>
+        <%= link_to tipped_piece.title, piece_show_path(tipped_piece.api_work_id) %>
         <% if tipped_piece.subtitle.present? %>
           <%= ": #{tipped_piece.subtitle}"  %>
         <% end %>

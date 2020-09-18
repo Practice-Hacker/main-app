@@ -2,10 +2,10 @@
 
 <center>
   <%= form_tag "/pieces/tips/#{@tip.id}", method: :patch do |f| %>
-    <%= label_tag :tip %>
+    <%= label_tag :tip, "Edit your practice tip for this piece" %>
     <%= text_field_tag :tip, "#{@tip.tip}" %>
     <br>
-    <%= label_tag :difficulty_rating %>
+    <%= label_tag :difficulty_rating, "Difficulty Rating - 1: Pretty Easy, 5: Highly difficult" %>
     <%= select_tag :difficulty_rating, options_for_select([1, 2, 3, 4, 5]) %>
     <br>
     <%= submit_tag "Update Tip" %>

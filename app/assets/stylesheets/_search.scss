@@ -41,5 +41,18 @@ section.pieces{
         }
       }
     }
+    p{
+      a{
+        border-radius: 0;
+        border: 1px solid #ced4da;
+        margin-bottom: 1rem;
+        padding: .5rem 4rem ;
+        &:hover{
+          background-color: #343a40;
+          color: #F7F7F7;
+          transition: ease-in-out;
+        }
+      }
+    }
   }
 }

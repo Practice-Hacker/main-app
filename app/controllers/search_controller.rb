@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
     @query = params[:q]
-    @pieces = SearchFacade.pieces(params[:q])
+    @offset = params[:offset] || 0
+    @pieces = SearchFacade.pieces(@query,  @offset)
   end
 end

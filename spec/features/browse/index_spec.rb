@@ -36,7 +36,7 @@ RSpec.describe "Browse" do
   end
 
   it "let's you pick an instrument and then takes you to the search index page for that instrument" do
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=Violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=Violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit browse_index_path

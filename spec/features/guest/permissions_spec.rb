@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "as a guest on the website" do
   it "I can use the search function" do
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit root_path
@@ -21,7 +21,7 @@ RSpec.describe "as a guest on the website" do
   end
 
   it "I can use the browse function" do
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=Violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=Violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit browse_index_path

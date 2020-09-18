@@ -9,7 +9,7 @@ RSpec.describe 'Search Index' do
   end
   it 'should show piece information' do
     # Stub the request from the sinatra api
-    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit root_path
@@ -34,7 +34,7 @@ RSpec.describe 'Search Index' do
   end
 
   it 'should render something different if page had no results' do
-    stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=qwerrewer").to_return(status: 200, body: File.read('spec/data/search_not_found.json'))
+    stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=qwerrewer").to_return(status: 200, body: File.read('spec/data/search_not_found.json'))
 
     visit root_path
 
@@ -46,5 +46,20 @@ RSpec.describe 'Search Index' do
     expect(current_path).to eq('/search')
 
     expect(page).to have_content('We are sorry! We currently have no results for your query')
+  end
+
+  it "loads additional results when load more is pushed" do
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=0&q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
+
+    visit('/search?offset=0&q=violin')
+
+    expect(page).to have_link("Load More")
+    click_link("Load More")
+
+    expect(current_url).to include("q=violin")
+    expect(current_url).to include("offset=20")
+
+
   end
 end

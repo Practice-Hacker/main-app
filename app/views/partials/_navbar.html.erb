@@ -31,13 +31,9 @@
           <%= link_to 'Browse Music','#', class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Register', "/auth/google_oauth2", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to 'Log In', "/auth/google_oauth2", class: "nav-link" %>
         </li>
       </ul>
-
     <% end %>
     <%= form_tag '/search', method: :get, class: 'form-inline my-2 my-lg-0' do %>
       <%= text_field_tag :q, nil, placeholder: 'Search Music', class: 'form-control mr-sm-2', type: 'search' %>

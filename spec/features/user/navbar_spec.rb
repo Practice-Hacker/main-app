@@ -13,7 +13,6 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Browse Music")
       expect(page).to have_link("Favorites")
       expect(page).to have_link("Profile")
-      expect(page).to have_link("Home")
       expect(page).to have_link("Log Out")
     end
 
@@ -23,7 +22,6 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Browse Music")
       expect(page).to have_link("Favorites")
       expect(page).to have_link("Profile")
-      expect(page).to have_link("Home")
       expect(page).to have_link("Log Out")
     end
 
@@ -33,7 +31,6 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Browse Music")
       expect(page).to have_link("Favorites")
       expect(page).to have_link("Profile")
-      expect(page).to have_link("Home")
       expect(page).to have_link("Log Out")
     end
 
@@ -45,7 +42,6 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Browse Music")
       expect(page).to have_link("Favorites")
       expect(page).to have_link("Profile")
-      expect(page).to have_link("Home")
       expect(page).to have_link("Log Out")
     end
 
@@ -62,7 +58,6 @@ RSpec.describe 'user navbar' do
       expect(page).to have_link("Browse Music")
       expect(page).to_not have_link("Favorites")
       expect(page).to_not have_link("Profile")
-      expect(page).to_not have_link("Home")
       expect(page).to_not have_link("Log Out")
     end
   end

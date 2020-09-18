@@ -43,13 +43,13 @@ RSpec.describe "Browse" do
     click_link("Violin")
     expect(current_path).to eq("/search")
 
-    # within('section.pieces') do
-    #   expect(page).to have_selector('.piece', count: 20)
-    # end
-    #
-    # within first('.piece') do
-    #   expect(page).to have_content(parsed_data[:results][1][:composer][:name])
-    #   expect(page).to have_content(parsed_data[:results][1][:work][:title])
-    # end
+    within('section.pieces') do
+      expect(page).to have_selector('.piece', count: 20)
+    end
+
+    within first('.piece') do
+      expect(page).to have_content(parsed_data[:results][1][:composer][:name])
+      expect(page).to have_content(parsed_data[:results][1][:work][:title])
+    end
   end
 end

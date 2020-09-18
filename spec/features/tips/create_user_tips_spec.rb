@@ -44,5 +44,20 @@ RSpec.describe "user tips creation" do
         expect(page).to have_content("Difficulty Rating: 3/5")
       end
     end
+
+    it "displays error message if user tip is not created correctly" do
+      visit "/pieces/#{@piece_id}"
+
+      click_on "Add Tip"
+
+      fill_in :tip, with: ""
+      select 3, from: :difficulty_rating
+      click_on "Create Tip"
+
+      user_tip = Tip.last
+
+      expect(current_path).to eq("/pieces/#{@piece_id}/tips/new")
+      expect(page).to have_content("Tip can't be blank")
+    end
   end
 end

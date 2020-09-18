@@ -1,35 +1,54 @@
+<section class="header browse">
 <h1>Browse By Instrument</h1>
-<section class="strings">
-  <h3>Strings</h3>
-  <% @instruments[:strings].each do |type| %>
-    <td ><%= link_to type, search_index_path(q: type) %></td>
-  <% end %>
 </section>
 
-<section class="Woodwinds and Brass">
-  <h3>Woodwinds and Brass</h3>
-  <% @instruments[:woodwinds_and_brass].each do |type| %>
-    <td ><%= link_to type, search_index_path(q: type) %></td>
-  <% end %>
+<section class="container-fluid ">
+  <section class="strings row">
+    <h3 class="col-4"> Strings</h3>
+    <ul class="col-8">
+    <% @instruments[:strings].each do |type| %>
+     <li><%= link_to type, search_index_path(q: type) %></li>
+    <% end %>
+    </ul>
+  </section>
+  <hr>
+
+  <section class="Woodwinds and Brass row">
+    <h3 class="col-4">Woodwinds and Brass</h3>
+    <ul class="col-8">
+    <% @instruments[:woodwinds_and_brass].each do |type| %>
+     <li><%= link_to type, search_index_path(q: type) %></li>
+    <% end %>
+    </ul>
+  </section>
+  <hr>
+
+  <section class="Keyboards row">
+    <h3 class="col-4">Keyboards</h3>
+    <ul class="col-8">
+    <% @instruments[:keyboards].each do |type| %>
+        <li><%= link_to type, search_index_path(q: type) %></li>
+    <% end %>
+    </ul>
+  </section>
+  <hr>
+
+  <section class="Percussion row">
+    <h3 class="col-4">Percussion</h3>
+    <ul class="col-8">
+    <% @instruments[:percussion].each do |type| %>
+        <li><%= link_to type, search_index_path(q: type) %></li>
+    <% end %>
+    </ul>
+  </section>
+<hr>
+  <section class="Voice row">
+    <h3 class="col-4">Voice</h3>
+    <ul class="col-8">
+    <% @instruments[:vocal].each do |type| %>
+      <li><%= link_to type, search_index_path(q: type) %></li>
+    <% end %>
+    </ul>
+  </section>
 </section>
 
-<section class="Keyboards">
-  <h3>Keyboards</h3>
-  <% @instruments[:keyboards].each do |type| %>
-    <td ><%= link_to type, search_index_path(q: type) %></td>
-  <% end %>
-</section>
-
-<section class="Percussion">
-  <h3>Percussion</h3>
-  <% @instruments[:percussion].each do |type| %>
-    <td ><%= link_to type, search_index_path(q: type) %></td>
-  <% end %>
-</section>
-
-<section class="Voice">
-  <h3>Voice</h3>
-  <% @instruments[:vocal].each do |type| %>
-    <td ><%= link_to type, search_index_path(q: type) %></td>
-  <% end %>
-</section>

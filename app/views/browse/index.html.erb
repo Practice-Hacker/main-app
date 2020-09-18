@@ -1,29 +1,36 @@
+<%= render partial: "/partials/navbar" %>
+
 <h1>Browse By Instrument</h1>
 <section class="strings">
+  <h3>Strings</h3>
   <% @instruments[:strings].each do |type| %>
     <td ><%= link_to type, search_index_path(q: type) %></td>
   <% end %>
 </section>
 
 <section class="Woodwinds and Brass">
+  <h3>Woodwinds and Brass</h3>
   <% @instruments[:woodwinds_and_brass].each do |type| %>
     <td ><%= link_to type, search_index_path(q: type) %></td>
   <% end %>
 </section>
 
 <section class="Keyboards">
+  <h3>Keyboards</h3>
   <% @instruments[:keyboards].each do |type| %>
     <td ><%= link_to type, search_index_path(q: type) %></td>
   <% end %>
 </section>
 
 <section class="Percussion">
+  <h3>Percussion</h3>
   <% @instruments[:percussion].each do |type| %>
     <td ><%= link_to type, search_index_path(q: type) %></td>
   <% end %>
 </section>
 
 <section class="Voice">
+  <h3>Voice</h3>
   <% @instruments[:vocal].each do |type| %>
     <td ><%= link_to type, search_index_path(q: type) %></td>
   <% end %>

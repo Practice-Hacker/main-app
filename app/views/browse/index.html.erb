@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 <%= render partial: "/partials/navbar" %>
 <section class="header browse">
   <h3 class="header-title" align="center">Browse By Instrument</h3>
+=======
+<h1>Browse By Instrument</h1>
+<section class="strings">
+  <h3>Strings</h3>
+  <% @instruments[:strings].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+>>>>>>> 6907f16dff8f2d4d865466a21c917def7cb26316
 </section>
 
 <section class="container-fluid ">

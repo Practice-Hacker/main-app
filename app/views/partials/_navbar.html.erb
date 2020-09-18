@@ -14,7 +14,7 @@
     <% if current_user %>
       <ul class="navbar-nav current-user-nav">
         <li class="nav-item">
-          <%= link_to 'Browse Music','#', class: "nav-link" %>
+          <%= link_to 'Browse Music',browse_index_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'Profile', user_path(current_user.id), class: "nav-link" %>

@@ -1,17 +1,18 @@
 <!-- add url and method to line 5 once we have a path for search functionality -->
 <!-- add path and method to line 10 once we have browse functionality -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Practice H</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg main-nav navbar-dark bg-dark">
+  <div class="my-2 mr-auto">
+    <% cache 'image-logo' do %>
+    <%=link_to(image_tag("https://f000.backblazeb2.com/file/PracticeHacker/phlogowname_purplegradient.png", class: "nav_bar-image"), root_path, class: "navbar-brand mr-auto") %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="" id="navbarSupportedContent">
     <% if current_user %>
-      <ul class="navbar-nav mr-auto current-user-nav">
-        <li class="nav-item">
-          <%= link_to 'Home', root_path, class: "nav-link" %>
-        </li>
+      <ul class="navbar-nav current-user-nav">
         <li class="nav-item">
           <%= link_to 'Browse Music','#', class: "nav-link" %>
         </li>
@@ -26,7 +27,7 @@
         </li>
       </ul>
     <% else %>
-      <ul class="navbar-nav mr-auto guest-nav">
+      <ul class="navbar-nav guest-nav">
         <li class="nav-item">
           <%= link_to 'Browse Music','#', class: "nav-link" %>
         </li>
@@ -35,7 +36,7 @@
         </li>
       </ul>
     <% end %>
-    <%= form_tag '/search', method: :get, class: 'form-inline my-2 my-lg-0' do %>
+    <%= form_tag '/search', method: :get, class: 'form-inline my-lg-0' do %>
       <%= text_field_tag :q, nil, placeholder: 'Search Music', class: 'form-control mr-sm-2', type: 'search' %>
       <%= submit_tag "Search", class: 'btn my-2 my-sm-0' %>
     <% end %>

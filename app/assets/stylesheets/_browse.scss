@@ -1,0 +1,35 @@
+.container-fluid{
+  width: 70vw;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 3rem auto;
+}
+
+section.header.browse{
+  background-image: url("https://f000.backblazeb2.com/file/PracticeHacker/dan-gold-YW9cBl03LmE-unsplash.jpg");
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  h3{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #F7F7F7;
+    position: relative;
+    z-index: 33;
+    letter-spacing: 3px;
+  }
+
+  &::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: transparentize(#2E2F30, .3);
+  }
+
+}

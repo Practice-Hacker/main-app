@@ -1,5 +1,5 @@
 class SearchFacade
-  def self.pieces(query, offset)
+  def self.pieces(query, offset = 0)
     res = search_data(query)[:results] || []
 
     res.map do |result|
@@ -7,7 +7,7 @@ class SearchFacade
     end
   end
 
-  def self.search_data(query, offset)
+  def self.search_data(query, offset = 0)
     ApiCallService.new.parsed_search(query, offset)
   end
 end

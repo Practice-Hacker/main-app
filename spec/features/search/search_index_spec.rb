@@ -53,7 +53,7 @@ RSpec.describe 'Search Index' do
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
 
     visit('/search?q=violin')
-
+    
     expect(page).to have_link("Load More")
     click_link("Load More")
 

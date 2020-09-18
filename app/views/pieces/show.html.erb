@@ -17,7 +17,9 @@
       <h2 class="composer">Composed by: <%= @piece.composer %></h2>
       <p class="average-rating">
       </p>
-      <%= link_to "Add Tip", "/pieces/#{@piece.api_work_id}/tips/new", class: 'btn btn-piece'%>
+      <% if current_user %>
+        <%= link_to "Add Tip", "/pieces/#{@piece.api_work_id}/tips/new", class: 'btn btn-piece'%>
+      <% end %>
       <p class="tip-count">
       </p>
       <% @piece.tips.each do |user_tip| %>

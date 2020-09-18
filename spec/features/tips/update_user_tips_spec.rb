@@ -32,9 +32,8 @@ RSpec.describe "user tips updating" do
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
     piece = Piece.create!(id: piece_id, title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "#{piece_id}")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit root_path
-    click_on "Log In"
 
     tip1 = Tip.create!(tip: "Something about classical music", difficulty_rating: 2, user: user, piece: piece)
 
@@ -65,9 +64,9 @@ RSpec.describe "user tips updating" do
     parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
     piece_id = parsed_data[:work][:id]
     piece = Piece.create!(id: piece_id, title: "Do Re Mi", subtitle: "C Scale", composer: "Sir Wigwearer", api_work_id: "28072")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit root_path
-    click_on "Log In"
+
 
     tip1 = Tip.create!(tip: "Something about classical music", difficulty_rating: 2, user: user, piece: piece)
 

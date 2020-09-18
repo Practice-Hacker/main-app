@@ -28,6 +28,8 @@
           <%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get, class: 'btn btn-piece' %>
           <%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete, class: 'btn btn-piece' %>
         </section>
+      <% else %>
+        <p>Want to be able to favorite a piece or add your own tip? Register as a user using the log in link at the top of the page!</p>
         <hr>
       <% end %>
 

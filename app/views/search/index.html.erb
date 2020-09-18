@@ -2,6 +2,7 @@
 <div class="search-header">
   <h1>Search Results</h1>
 </div>
+<% cache ("search-piece-#{@query}") do %>
 <% if @pieces.empty? %>
   <section class="">
     <p> We are sorry! We currently have no results for your query </p>
@@ -19,6 +20,7 @@
       </tr>
       </thead>
       <tbody>
+
       <% @pieces.each do |piece| %>
         <% if piece.title %>
           <tr class="piece" id = <%= piece.api_work_id %>>
@@ -28,8 +30,10 @@
           </tr>
         <% end %>
       <% end %>
+
       </tbody>
     </table>
   </div>
 </section>
+<% end %>
 <% end %>

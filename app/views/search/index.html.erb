@@ -2,7 +2,7 @@
 <div class="search-header">
   <h1>Search Results</h1>
 </div>
-<% cache ("search-piece-#{@query}") do %>
+<% cache ("search-piece-#{@query}-#{@offset}") do %>
 <% if @pieces.empty? %>
   <section class="">
     <p> We are sorry! We currently have no results for your query </p>

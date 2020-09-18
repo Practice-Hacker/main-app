@@ -4,7 +4,7 @@
 <section class="form create-tip">
   <%= form_tag "/pieces/#{params[:id]}", method: :post do %>
     <div class="form-group">
-      <%= label_tag :tip %>
+      <%= label_tag :tip, "Add your practice tip for this piece" %>
       <%= text_area_tag :tip, nil, class: 'form-control', rows: 8 %>
     </div>
 

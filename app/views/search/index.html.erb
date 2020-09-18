@@ -33,7 +33,8 @@
 
       </tbody>
     </table>
-    <%= link_to "Load More", search_index_path(q: @query, offset: @offset + 20) %>
+    <hr>
+    <p align="center"><%= link_to "Load More", search_index_path(q: @query, offset: @offset + 20), class: 'btn btn-piece' %></p>
   </div>
 </section>
 <% end %>

@@ -1,0 +1,90 @@
+section.about-me{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  width: 70vw;
+  margin: 2rem auto 0;
+  .col:first-child{
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  h3{
+    text-transform: capitalize;
+    text-align: center;
+    position: relative;
+    &::after{
+      content: '';
+      width: 3rem;
+      height: 3px;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.1);
+      top: 2.2rem;
+      left: 50%;
+
+    }
+
+  }
+}
+
+.user-edit_btn{
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 4rem;
+  .btn.btn-edit{
+    border-radius: 0;
+    border: 1px solid #ced4da;
+    &:hover{
+      background-color: #343a40;
+      color: #F7F7F7;
+      transition: ease-in-out;
+    }
+  }
+
+}
+
+
+section.header.user{
+  background-image: url("https://f000.backblazeb2.com/file/PracticeHacker/dan-gold-YW9cBl03LmE-unsplash.jpg");
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .user-roles{
+    p{
+      color: #F7F7F7 !important;
+      position: relative;
+      z-index: 4;
+    }
+  }
+  h3{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #F7F7F7;
+    position: relative;
+    z-index: 33;
+    letter-spacing: 3px;
+  }
+
+  &::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: transparentize(#2E2F30, .3);
+  }
+
+}
+
+section.pieces-contributed-to{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 70vw;
+  margin: 0 auto 20px;
+  padding: 25px ;
+  h3{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

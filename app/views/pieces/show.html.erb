@@ -23,16 +23,15 @@
       <p class="tip-count">
       </p>
       <% @piece.tips.each do |user_tip| %>
-        <section id="tips-<%= user_tip.id %>">
+        <section class="tips" id="tips-<%= user_tip.id %>">
           <p>Tip Info: <%= user_tip.tip %></p>
           <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
-          <p><%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get %></p>
-          <p><%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete %></p>
+          <%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get, class: 'btn btn-piece' %>
+          <%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete, class: 'btn btn-piece' %>
         </section>
+        <hr>
       <% end %>
 
-<h1 class="title"><%= @piece.title %>: <%= @piece.subtitle %></h1>
-<h3 class="composer">Composed by: <%= @piece.composer %></h3>
 <p class="average-rating">
 </p>
 <p class="tip-count">

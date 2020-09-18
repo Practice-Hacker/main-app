@@ -1,6 +1,6 @@
 class SearchFacade
   def self.pieces(query, offset = 0)
-    res = search_data(query)[:results] || []
+    res = search_data(query, offset)[:results] || []
 
     res.map do |result|
       PieceData.new(result)

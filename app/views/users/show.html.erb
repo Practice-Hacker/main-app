@@ -27,5 +27,22 @@
  </section>
 <% end %>
 <section class="pieces-contributed-to">
-  <td><%= current_user.tips.size %> # of tips contributed</td>
+  <tr class="total-tips">Overall number of tips contributed: <%= current_user.tips.size %></tr>
+  <% current_user.tipped_pieces.distinct.each do |tipped_piece| %>
+    <section id="contribution-<%= tipped_piece.id %>"
+      <p class="title">
+        <%= link_to tipped_piece.title, piece_show_path(tipped_piece.id) %>
+        <% if tipped_piece.subtitle.present? %>
+          <%= ": #{tipped_piece.subtitle}"  %>
+        <% end %>
+      </p>
+      <p class="composer">
+        Composed by: <%= tipped_piece.composer %>
+      </p>
+      <p>
+        Number of tips you've contributed to this piece:
+        <%= current_user.tips.where(piece_id: tipped_piece.id).count %>
+      </p>
+    </section>
+  <% end %>
 </section>

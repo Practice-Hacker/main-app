@@ -59,7 +59,5 @@ RSpec.describe 'Search Index' do
 
     expect(current_url).to include("q=violin")
     expect(current_url).to include("offset=20")
-
-
   end
 end

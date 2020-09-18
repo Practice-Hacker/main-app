@@ -55,6 +55,10 @@ RSpec.describe 'Search Index' do
     visit('/search?offset=0&q=violin')
 
     expect(page).to have_link("Load More")
+
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?offset=20&q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
+
     click_link("Load More")
 
     expect(current_url).to include("q=violin")

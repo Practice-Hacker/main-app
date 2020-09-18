@@ -47,4 +47,19 @@ RSpec.describe 'Search Index' do
 
     expect(page).to have_content('We are sorry! We currently have no results for your query')
   end
+
+  it "loads additional results when load more is pushed" do
+    data_response = stub_request(:get, "#{ENV['API_SINATRA_URL']}search?q=violin").to_return(status: 200, body: File.read('spec/data/search_data.json'))
+    parsed_data = JSON.parse(data_response.response.body, symbolize_names: true)
+
+    visit('/search?q=violin')
+
+    expect(page).to have_link("Load More")
+    click_link("Load More")
+
+    expect(current_path).to include("q=violin")
+    expect(current_path).to include("offset=20")
+
+
+  end
 end

@@ -26,7 +26,7 @@
       <% @piece.tips.each do |user_tip| %>
         <section class="tips" id="tips-<%= user_tip.id %>">
           <p>Tip Info: <%= user_tip.tip %></p>
-          <p>Difficulty Rating: <%= user_tip.difficulty_rating %>/5</p>
+          <p>Difficulty Rating (1: Pretty Easy, 5: Highly difficult): <%= user_tip.difficulty_rating %>/5</p>
           <% if current_user %>
             <%= link_to "Edit Tip", "/pieces/#{@piece.id}/tips/#{user_tip.id}/edit", method: :get, class: 'btn btn-piece' %>
             <%= link_to "Delete Tip", "/pieces/tips/#{user_tip.id}", method: :delete, class: 'btn btn-piece' %>

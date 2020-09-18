@@ -1,0 +1,30 @@
+<h1>Browse By Instrument</h1>
+<section class="strings">
+  <%= @instruments[:strings].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+</section>
+
+<section class="Woodwinds and Brass">
+  <%= @instruments[:woodwinds_and_brass].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+</section>
+
+<section class="Keyboards">
+  <%= @instruments[:keyboards].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+</section>
+
+<section class="Percussion">
+  <%= @instruments[:percussion].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+</section>
+
+<section class="Voice">
+  <%= @instruments[:vocal].each do |type| %>
+    <td ><%= link_to type, search_index_path(q: type) %></td>
+  <% end %>
+</section>

@@ -30,6 +30,8 @@ RSpec.describe "as a user on my profile page" do
       expect(page).to have_link(piece1.title)
       expect(page).to have_content("Number of tips you've contributed to this piece: #{user.tips.where(piece_id: piece1.id).count}")
       expect(page).to have_content("Composed by: #{piece1.composer}")
+      click_link(piece1.title)
     end
+    expect(current_path).to eq("/pieces/#{piece1.api_work_id}")
   end
 end
